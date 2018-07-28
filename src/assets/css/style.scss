@@ -1,0 +1,39 @@
+/* Estilos Gerais */
+
+  @import '~pretty-checkbox/src/pretty-checkbox.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 80%;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+.inputs {
+  border: none;
+  border-bottom: 3px solid #66c4ad;
+  width: 100%;
+  margin-bottom: 20px;
+  font: 20px Arial;
+}
+
+/* Cabecalho */
+.cabecalho {
+  text-align: center;
+}
+
+.cabecalho > .logo {
+  margin-top: 20px;
+}
+
+.button-confirm {
+  background-color: #ddbb55;
+  border-color: #ddbb55;
+}
+
+.swal-footer {
+  text-align: center;
+}

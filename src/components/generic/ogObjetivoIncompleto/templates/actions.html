@@ -1,0 +1,16 @@
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+    Incompleto
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li ng-click="ctrl.caller.prepararExclusao()">
+          <i class="fa fa-times deletar icon"></i>
+          Excluir
+    </li>
+    <li ng-click="ctrl.caller.prepararCompletar()">
+      <i class="fa fa-check completar icon"></i>
+      Completar
+    </li>
+  </ul>
+</div>

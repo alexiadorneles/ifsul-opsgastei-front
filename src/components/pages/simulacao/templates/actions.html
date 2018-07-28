@@ -1,0 +1,13 @@
+<div class="p-actions pretty p-icon p-round">
+  <input
+    type="checkbox"
+    ng-true-value="{{ctrl.objetivo.valor}}"
+    ng-model="ctrl.caller.selecionados[ctrl.objetivo.id]"
+    ng-checked="ctrl.caller.selecionados[ctrl.objetivo.id]"
+    ng-change="ctrl.caller.somarValores()"
+  >
+  <div class="state state-actions">
+    <i class="icon icon-actions fa fa-check" ng-show="ctrl.caller.selecionados[ctrl.objetivo.id]"></i>
+    <label></label>
+  </div>
+</div>

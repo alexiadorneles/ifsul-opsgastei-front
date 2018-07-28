@@ -1,0 +1,34 @@
+<og-navbar mes="ctrl.mes"></og-navbar>
+<og-saldo
+  ng-if="ctrl.periodo && ctrl.salario"
+  periodo="ctrl.periodo"
+  salario="ctrl.salario.valor"
+></og-saldo>
+<og-menubar></og-menubar>
+
+<div class="container" >
+  <!-- COMPLETOS-->
+  <og-box og-title="objetivos completos">
+    <og-box-body>
+      <og-objetivo
+        ng-repeat="each in ctrl.objetivosCompletos"
+        objetivo="each"
+      ></og-objetivo>
+      <og-totalizador
+        list-objetivos="ctrl.objetivosCompletos"
+      ></og-totalizador>
+    </og-box-body>
+  </og-box>
+
+  <!-- GASTOS FIXOS  -->
+  <og-box og-title="gastos fixos">
+    <og-box-body>
+      <og-gasto-fixo
+        hide-editar="true"
+        ng-repeat="each in ctrl.gastosFixos"
+        gasto-fixo="each"
+        callback-excluir="ctrl.buscarGastosFixos"
+      ></og-gasto-fixo>
+    </og-box-body>
+  </og-box>
+</div>

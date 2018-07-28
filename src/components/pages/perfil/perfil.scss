@@ -1,0 +1,51 @@
+perfil {
+  .container {
+    padding-bottom: 10px;
+  }
+
+  .header-profile {
+    width:100%;
+    height:300px;
+    display:table;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/assets/img/header.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    position: relative;
+    text-align: center;
+    word-break: break-all;
+    padding-top: 30px;
+
+    h3,h4 {
+      font-weight: normal;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+  }
+
+  .pic{
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  .list {
+    list-style: none;
+    font-size: 1.5em;
+
+    li {
+      height: 2.5em;
+    }
+    a {
+      display: block;
+      padding: 10px .8em;
+      color: #333;
+      text-decoration: none;
+    }
+    li:hover {
+      background-color: #e4e4e4;
+    }
+  }
+
+}

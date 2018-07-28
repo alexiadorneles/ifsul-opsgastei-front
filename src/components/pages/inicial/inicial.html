@@ -1,0 +1,14 @@
+<div class="inicial">
+  <h3>Bem vindo ao Ops... Gastei!</h3>
+  <h1>Vamos começar?</h1>
+
+  <form class="form">
+    <label class="labels" for="salario"> Qual seu salário? </label>
+    <input class="inputs" type="number" id="salario" ng-model="ctrl.valor" placeholder="R$ 500,00">
+    <og-button
+      label="Continuar"
+      model="ctrl.valor"
+      on-click="ctrl.criarSalario"
+    ></og-button>
+  </form>
+</div>

@@ -1,0 +1,31 @@
+<og-navbar></og-navbar>
+<og-menubar></og-menubar>
+<div class="adicionar-objetivo">
+  <div class="adicionar-objetivo-container">
+    <h3>NOVO OBJETIVO</h3>
+
+    <h3>Nome:</h3>
+    <input class="inputs" type="text" ng-model="objetivo.nome" name="nome-objetivo">
+
+    <h3>Valor:</h3>
+    <input class="inputs"
+      type="number"
+      ng-model="ctrl.objetivo.valor"
+      min="0"
+      ng-pattern="/^\d+(?:[\\.\,](\d+)?)?$/"
+      name="valor-objetivo">
+
+    <h3>Categoria:</h3>
+    <select id="categoria" class="inputs" ng-options="categoria.nome for categoria in ctrl.categorias" ng-model="ctrl.objetivo.categoria">
+      <option>
+        {{categoria.nome}}
+      </option>
+    </select>
+    <og-button
+      label="Adicionar Objetivo"
+      model="objetivo"
+      on-click="ctrl.adicionar"
+      width="100%"
+    ></og-button>
+  </div>
+</div>

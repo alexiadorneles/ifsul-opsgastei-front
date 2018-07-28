@@ -1,0 +1,34 @@
+<og-navbar></og-navbar>
+<og-menubar></og-menubar>
+<div class="container container-estatistica">
+  <h3>ESTATÍSTICAS</h3>
+  <div class="grafico-container">
+    <h4 class="title-grafico">Objetivos Completos</h4>
+    <og-graph
+      ng-if="ctrl.buscarObjetivos"
+      data="ctrl.data"
+      labels="ctrl.labels"
+      colors="ctrl.colors"
+      series="ctrl.series"
+      options="ctrl.options"
+      categorias="ctrl.categorias"
+      click="ctrl.onClick"
+    ></og-graph>
+  </div>
+  <div class="grafico-container">
+    <h4 class="title-grafico">Gastos Fixos</h4>
+    <og-graph
+      ng-if="ctrl.buscarGastosFixos"
+      data="ctrl.dado"
+      labels="ctrl.nomes"
+      colors="ctrl.cores"
+      series="ctrl.serie"
+      options="ctrl.options"
+      categorias="ctrl.categorias"
+      click="ctrl.onClick"
+    ></og-graph>
+  </div>
+  <og-legenda-grafico
+    categorias="ctrl.categorias"
+  ></og-legenda-grafico>
+</div>

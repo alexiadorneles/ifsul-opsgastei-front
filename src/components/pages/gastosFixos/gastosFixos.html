@@ -1,0 +1,15 @@
+<og-navbar></og-navbar>
+<og-menubar></og-menubar>
+<div class="container">
+  <h3>GASTOS FIXOS</h3>
+  <og-gasto-fixo
+    ng-repeat="each in ctrl.gastosFixos"
+    gasto-fixo="each"
+    callback-excluir="ctrl.buscarGastosFixos"
+  ></og-gasto-fixo>
+  <gf-adicionar-gasto
+    ng-if="ctrl.categorias"
+    categorias="ctrl.categorias"
+    callback-adicionar="ctrl.buscarGastosFixos"
+  ></gf-adicionar-gasto>
+</div>

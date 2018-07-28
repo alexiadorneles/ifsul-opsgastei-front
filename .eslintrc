@@ -1,0 +1,22 @@
+{
+"extends": "defaults",
+"parserOptions": {
+  "ecmaVersion": 7,
+  "sourceType": "module",
+  "ecmaFeatures": {
+    "jsx": true
+  }
+  },
+  "rules": {
+    "indent": ["error", 2],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "comma-dangle": ["error", "always-multiline"],
+    "no-cond-assign": ["error", "always"],
+    "no-extra-boolean-cast": 0,
+    "prefer-const": ["error", {
+      "destructuring": "any",
+      "ignoreReadBeforeAssign": false
+    }]
+  }
+}

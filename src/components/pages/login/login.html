@@ -1,0 +1,14 @@
+<div class="login-container">
+  <img src="/assets/img/back.svg" alt=""/>
+  <section class="login">
+    <og-logo></og-logo>
+
+    <div
+      class="botao-login"
+      ng-if="::ctrl.isNotAuthenticated()"
+      ng-click="ctrl.loginGoogle()"
+    >
+      <img src="assets/img/google-icon.svg" alt="">
+    </div>
+  </section>
+</div>

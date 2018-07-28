@@ -1,0 +1,42 @@
+.app-navbar {
+    margin-bottom: 0;
+    border: none;
+    z-index: 10001;
+}
+
+.navbar .app-navbar__menu-btn {
+    color: hsl(255, 100%, 100%);
+    background-color: hsl(165, 44%, 58%);
+    border: none;
+
+    &:hover, &:focus {
+        outline: hsla(255, 100%, 100%, 0.28) solid 1px;
+        color: hsl(255, 100%, 100%);
+    }
+
+    span {
+        transform: scale(1.4);
+    }
+}
+
+.app-navbar__container {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: hsl(165, 44%, 58%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.app-navbar__list {
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.app-navbar__list-content {
+  text-transform: uppercase;
+  color: white;
+  margin: auto 0;
+}

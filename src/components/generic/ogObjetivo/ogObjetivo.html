@@ -1,0 +1,18 @@
+<div class="objetivo-container">
+  <div class="objetivo-title">
+    <h4>{{ctrl.objetivo.nome}}</h4>
+    <div og-html-compile="ctrl.actions"></div>
+  </div>
+
+  <div class="info">
+    <div>
+      <span class="type">Valor:</span>
+      <span>{{ctrl.objetivo.valor | currency : "R$" : 2}}</span>
+    </div>
+
+  <div class="info-categoria">
+    <span class="type">Categoria:</span>
+    <span class="info-categoria-nome"> {{ctrl.objetivo.categoria.nome}} </span>
+    <og-tag-categoria icone="{{ctrl.objetivo.categoria.icone}}" cor="{{ctrl.objetivo.categoria.cor}}"></og-tag-categoria>
+  </div>
+</div>
