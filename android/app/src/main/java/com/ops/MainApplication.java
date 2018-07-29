@@ -1,4 +1,4 @@
-package com.ops;
+package com.opsgastei;
 
 import android.app.Application;
 

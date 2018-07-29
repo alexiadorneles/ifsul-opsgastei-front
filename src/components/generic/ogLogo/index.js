@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Image } from 'react-native'
-import Logo from '../../../assets/img/logo.png'
+import Logo from 'assets/img/logo.png'
 import { imageSize } from './ogLogoStyle'
 
 

@@ -9,30 +9,22 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View } from 'react-native'
 
-import OpsGasteiBox from './src/components/generic/ogBox'
-import OpsGasteiButton from './src/components/generic/ogButton'
-import OpsGasteiCategoria from './src/components/generic/ogCategoria'
-import OpsGasteiGastoFixo from './src/components/generic/ogGastoFixo'
-import OpsGasteiLogo from './src/components/generic/ogLogo'
-console.log(OpsGasteiLogo)
+// import OpsGasteiBox from './src/components/generic/ogBox'
+// import OpsGasteiButton from './src/components/generic/ogButton'
+// import OpsGasteiCategoria from './src/components/generic/ogCategoria'
+// import OpsGasteiGastoFixo from './src/components/generic/ogGastoFixo'
+import OpsGasteiLogo from 'components/generic/ogLogo'
 
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 // type Props = {};
-const categoria = { nome: 'COMIDA' }
-const gastoFixo = {
-  nome: 'Almoço',
-  opcoes: true,
-  valor: 10,
-  duracaoMeses: 2,
-  categoria,
-}
+// const categoria = { nome: 'COMIDA' }
+// const gastoFixo = {
+//   nome: 'Almoço',
+//   opcoes: true,
+//   valor: 10,
+//   duracaoMeses: 2,
+//   categoria,
+// }
 export default class App extends Component {
   render() {
     return (
@@ -59,7 +51,7 @@ export default class App extends Component {
       // </View>
 
 
-    );
+    )
   }
 }
 
@@ -80,4 +72,4 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-});
+})
