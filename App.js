@@ -13,7 +13,8 @@ import { Platform, StyleSheet, Text, View } from 'react-native'
 // import OpsGasteiButton from './src/components/generic/ogButton'
 // import OpsGasteiCategoria from './src/components/generic/ogCategoria'
 // import OpsGasteiGastoFixo from './src/components/generic/ogGastoFixo'
-import OpsGasteiLogo from 'components/generic/ogLogo'
+// import OpsGasteiLogo from 'components/generic/ogLogo'
+import OpsGasteiMenuBar from 'components/generic/ogMenubar'
 
 
 // type Props = {};
@@ -45,7 +46,9 @@ export default class App extends Component {
       //   <OpsGasteiGastoFixo gastoFixo={gastoFixo}/>
       // </OpsGasteiBox>
 
-      <OpsGasteiLogo></OpsGasteiLogo>
+      <View style={styles.container}>
+        <OpsGasteiMenuBar></OpsGasteiMenuBar>
+      </View>
 
 
       // </View>
@@ -58,8 +61,9 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'stretch',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
