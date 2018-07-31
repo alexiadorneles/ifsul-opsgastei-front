@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react'
-import { Platform, StyleSheet, Text, View } from 'react-native'
+import { Platform, StyleSheet, Text, View, ScrollView } from 'react-native'
 
 // import OpsGasteiBox from './src/components/generic/ogBox'
 // import OpsGasteiButton from './src/components/generic/ogButton'
@@ -47,6 +47,7 @@ export default class App extends Component {
       // </OpsGasteiBox>
 
       <View style={styles.container}>
+        <ScrollView></ScrollView>
         <OpsGasteiMenuBar></OpsGasteiMenuBar>
       </View>
 
@@ -61,10 +62,11 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'stretch',
-    backgroundColor: '#F5FCFF',
+    // marginBottom: 50,
+    // flexDirection: 'row',
+    // justifyContent: 'flex-end',
+    // alignItems: 'stretch',
+    // backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,

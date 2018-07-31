@@ -1,11 +1,12 @@
-// import { StyleSheet } from 'react-native'
+import COLORS from 'constants/colors'
 
-// export default StyleSheet.create({
 export default {
   menuBar: {
+    borderTopWidth: 2,
+    borderTopColor: COLORS.borderWrapper,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    backgroundColor: 'white',
+    backgroundColor: COLORS.text,
     height: 50,
   },
 }

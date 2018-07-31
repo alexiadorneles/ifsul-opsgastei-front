@@ -5,9 +5,18 @@ import OpsGasteiMenuItem from 'components/generic/ogMenuItem'
 import STYLES from './ogMenubarStyle'
 
 class OpsGasteiMenubar extends Component {
+  state = { menuItems: [] }
   constructor() {
     super()
 
+    this.goHome = this.goHome.bind(this)
+    this.buscarMes = this.buscarMes.bind(this)
+    this.goToEstatisticas = this.goToEstatisticas.bind(this)
+    this.goToGastoFixos = this.goToGastoFixos.bind(this)
+    this.goToPerfil = this.goToPerfil.bind(this)
+  }
+
+  componentDidMount() {
     this.initOptions()
   }
 
@@ -30,11 +39,39 @@ class OpsGasteiMenubar extends Component {
     // return _$location.$$absUrl.endsWith(urlEsperado)
   }
 
+  goHome() {
+    this.changeMenuItemAtivo('home')
+  }
+
+  buscarMes() {
+    this.changeMenuItemAtivo('calendar')
+  }
+
+  goToEstatisticas() {
+    this.changeMenuItemAtivo('pieChart')
+  }
+
+  goToGastoFixos() {
+    this.changeMenuItemAtivo('usd')
+  }
+
+  goToPerfil() {
+    this.changeMenuItemAtivo('user')
+  }
+
+  changeMenuItemAtivo(icone) {
+    const { menuItems } = this.state
+    const menuAtivo = menuItems.find(mi => !!mi.isAtivo)
+    if (menuAtivo) menuAtivo.isAtivo = false
+    menuItems.find(mi => mi.icone === icone).isAtivo = true
+    this.setState({ menuItems: this.menuItems })
+  }
+
   initOptions() {
     this.menuItems = [
       new MenuItem({
         icone: 'home',
-        isAtivo: false,
+        isAtivo: true,
         title: 'Inicial',
         onClick: this.goHome,
       }),
@@ -63,10 +100,14 @@ class OpsGasteiMenubar extends Component {
         onClick: this.goToPerfil,
       }),
     ]
+
+    this.setState({ menuItems: this.menuItems })
   }
 
   renderMenuItem() {
-    return this.menuItems.map(menuItem => {
+    console.log(this.state)
+    const { menuItems } = this.state
+    return menuItems.map(menuItem => {
       return <OpsGasteiMenuItem key={menuItem.icone} menuItem={menuItem} />
     })
   }
