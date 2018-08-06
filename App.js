@@ -15,6 +15,7 @@ import { Platform, StyleSheet, Text, View, ScrollView } from 'react-native'
 // import OpsGasteiGastoFixo from './src/components/generic/ogGastoFixo'
 // import OpsGasteiLogo from 'components/generic/ogLogo'
 import OpsGasteiMenuBar from 'components/generic/ogMenubar'
+import OpsGasteiNavbar from 'components/generic/ogNavbar'
 
 
 // type Props = {};
@@ -47,8 +48,9 @@ export default class App extends Component {
       // </OpsGasteiBox>
 
       <View style={styles.container}>
-        <ScrollView></ScrollView>
-        <OpsGasteiMenuBar></OpsGasteiMenuBar>
+        <OpsGasteiNavbar title="julho" />
+        <ScrollView />
+        <OpsGasteiMenuBar />
       </View>
 
 
