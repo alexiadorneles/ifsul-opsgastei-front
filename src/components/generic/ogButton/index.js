@@ -9,6 +9,12 @@ class OpsGasteiButton extends Component {
     width: PropTypes.number,
     onClick: PropTypes.function,
     label: PropTypes.string,
+    model: PropTypes.object,
+  }
+
+  onClick() {
+    const { onClick, model } = this.props
+    onClick(model)
   }
 
   render() {
@@ -17,7 +23,7 @@ class OpsGasteiButton extends Component {
       <View style={STYLES.buttonContainer}>
         <TouchableOpacity
           style={STYLES.botao}
-          onPress={this.props.onClick}
+          onPress={this.onClick}
         >
           <Text style={STYLES.texto}>{this.props.label.toUpperCase()}</Text>
         </TouchableOpacity>
