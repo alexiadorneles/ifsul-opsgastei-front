@@ -1,8 +1,27 @@
-import angular from 'angular'
-import component from './ogTotalizadorComponent'
+import React, { Component } from 'react'
+import { Text } from 'react-native'
+import PropTypes from 'prop-types'
 
-import './ogTotalizador.scss'
+import STYLES from './ogTotalizadorStyle'
 
-export default angular.module('generic.ogTotalizador', [])
-  .component('ogTotalizador', component)
-  .name
+class OpsGasteiTotalizador extends Component {
+  static propTypes = {
+    objetivos: PropTypes.array,
+  }
+
+  getTotal() {
+    const { objetivos } = this.props
+    return objetivos
+      .map(objetivo => objetivo.valor)
+      .reduce((a, b) => a + b)
+  }
+
+
+  render() {
+    if (!this.props.objetivos.length) return null
+
+    return <Text style={STYLES.objetivosCompletosTotal}> Total: {this.getTotal()} </Text>
+  }
+}
+
+export default OpsGasteiTotalizador

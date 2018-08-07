@@ -18,6 +18,7 @@ import OpsGasteiMenuBar from 'components/generic/ogMenubar'
 import OpsGasteiObjetivoIncompleto from 'components/generic/ogObjetivoIncompleto'
 import OpsGasteiNavbar from 'components/generic/ogNavbar'
 import OpsGasteiSaldo from 'components/generic/ogSaldo'
+import OpsGasteiTotalizador from 'components/generic/ogTotalizador'
 
 
 // type Props = {};
@@ -34,6 +35,12 @@ const objetivo = {
   nome: 'Xis',
   valor: 15,
   categoria,
+}
+
+const objetivos = []
+
+for (let i=0; i < 10; i++) {
+  objetivos.push({ valor: i * 10 })
 }
 
 export default class App extends Component {
@@ -66,6 +73,7 @@ export default class App extends Component {
           <OpsGasteiSaldo />
           <OpsGasteiBox title="Objetivos Incompletos">
             <OpsGasteiObjetivoIncompleto objetivo={objetivo} callbackAcao={this.teste} />
+            <OpsGasteiTotalizador objetivos={objetivos} />
           </OpsGasteiBox>
         </ScrollView>
         <OpsGasteiMenuBar />
