@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { TouchableOpacity, Text, View } from 'react-native'
-import FontAwesome, { Icons } from 'react-native-fontawesome'
+import { Icons } from 'react-native-fontawesome'
 import OpsGasteiIcone from 'components/generic/ogIcone'
 import STYLES from './ogMenuItemStyle'
 
