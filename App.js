@@ -17,6 +17,7 @@ import { StyleSheet, View, ScrollView } from 'react-native'
 import OpsGasteiMenuBar from 'components/generic/ogMenubar'
 import OpsGasteiObjetivoIncompleto from 'components/generic/ogObjetivoIncompleto'
 import OpsGasteiNavbar from 'components/generic/ogNavbar'
+import OpsGasteiSaldo from 'components/generic/ogSaldo'
 
 
 // type Props = {};
@@ -62,6 +63,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <OpsGasteiNavbar title="julho" />
         <ScrollView>
+          <OpsGasteiSaldo />
           <OpsGasteiObjetivoIncompleto objetivo={objetivo} callbackAcao={this.teste} />
         </ScrollView>
         <OpsGasteiMenuBar />

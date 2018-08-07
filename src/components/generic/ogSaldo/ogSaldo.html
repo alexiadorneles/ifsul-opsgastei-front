@@ -1,4 +1,0 @@
-<div class="saldo" ng-class="{ 'on-red' : ctrl.valorSaldo < 0, 'with-salario' : !!ctrl.salario }">
-  <p class="valor-saldo">{{ctrl.valorSaldoExibicao | currency : "R$" : 2}}</p>
-  <div ng-if="ctrl.salario">Salário: {{ctrl.getSalario() | currency : "R$" : 2}}</div>
-</div>
