@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
 import { Text, View, TouchableOpacity } from 'react-native'
+import PropTypes from 'prop-types'
+
 import STYLES from './ogButtonStyle'
 
 class OpsGasteiButton extends Component {
+  static propTypes = {
+    width: PropTypes.number,
+    onClick: PropTypes.function,
+    label: PropTypes.string,
+  }
+
   render() {
     STYLES.botao.width = this.props.width
     return (

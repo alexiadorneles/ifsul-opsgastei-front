@@ -4,7 +4,6 @@ export default {
   appNavbar: {
     flexDirection: 'row',
     marginBottom: 0,
-    backgroundColor: 'red',
   },
 
   appNavbarContainer: {

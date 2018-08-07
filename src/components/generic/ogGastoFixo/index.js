@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import { Text, View, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native'
-import STYLES from './ogGastoFixoStyle'
 import FontAwesome, { Icons } from 'react-native-fontawesome'
+import PropTypes from 'prop-types'
+
+import STYLES from './ogGastoFixoStyle'
 
 class OpsGasteiGastoFixo extends Component {
+  static propTypes = {
+    gastoFixo: PropTypes.object,
+  }
   state = { gastoFixo: {} }
 
   constructor() {
@@ -28,14 +33,14 @@ class OpsGasteiGastoFixo extends Component {
     // })
   }
 
-  editar(atual, callback) {
-    const title = 'Editar Gasto Fixo'
-    const text = 'Digite o novo valor do gasto fixo (somente números): '
-    const inputOptions = {
-      type: 'number',
-      placeholder: 'R$ 500,00',
-      step: '0.50',
-    }
+  editar() {
+    // const title = 'Editar Gasto Fixo'
+    // const text = 'Digite o novo valor do gasto fixo (somente números): '
+    // const inputOptions = {
+    //   type: 'number',
+    //   placeholder: 'R$ 500,00',
+    //   step: '0.50',
+    // }
 
     // _swalService.input({ title, text, inputOptions }, callback)
   }
@@ -48,14 +53,14 @@ class OpsGasteiGastoFixo extends Component {
     this.editar(this.gastoFixo, this.editarGastoProximos)
   }
 
-  editarGastoAtual(valor) {
+  editarGastoAtual() {
     // _gastoFixoService.editarAgora(this.construirDtoEdicao(valor, this.gastoFixo)).then(() => {
     //   this.callbackExcluir()
     //   _$rootScope.$emit('atualizarSaldo')
     // })
   }
 
-  editarGastoProximos(valor) {
+  editarGastoProximos() {
     // _gastoFixoService.editarProximos(this.construirDtoEdicao(valor, this.gastoFixo)).then(() => {
     //   this.callbackExcluir()
     // TODO: ver workaround para este trecho

@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
+import PropTypes from 'prop-types'
+
 import STYLES from './ogObjetivoStyle'
 
 class OpsGasteiObjetivo extends Component {
+  static propTypes = {
+    objetivo: PropTypes.object,
+    children: PropTypes.Component,
+  }
+
   render() {
     const { objetivo, children } = this.props
 

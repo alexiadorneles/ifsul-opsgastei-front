@@ -1,3 +1,5 @@
+import COLORS from 'constants/colors'
+
 export default {
   gastosContainer: {
     marginBottom: 30,
@@ -36,7 +38,7 @@ export default {
   },
 
   type: {
-    color: '#7b7b7b',
+    color: COLORS.darkGrey,
   },
 
   opcoes: {

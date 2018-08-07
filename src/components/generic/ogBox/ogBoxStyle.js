@@ -1,5 +1,6 @@
+import COLORS from 'constants/colors'
 const BORDER = {
-  color: '#9f9f9f',
+  color: COLORS.grey,
   width: 2,
   style: 'solid',
 }
@@ -54,7 +55,7 @@ export default {
   textStyle: {
     fontWeight: 'bold',
     fontSize: 22,
-    color: '#828282',
+    color: COLORS.grey,
     textAlign: 'center',
   },
 }

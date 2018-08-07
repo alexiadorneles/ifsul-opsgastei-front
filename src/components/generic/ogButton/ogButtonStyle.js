@@ -1,4 +1,4 @@
-import { primaryColor, textColor } from 'constants/colors'
+import COLORS from 'constants/colors'
 
 export default {
   buttonContainer: {
@@ -15,10 +15,10 @@ export default {
     alignItems: 'center',
     alignSelf: 'stretch',
     borderTopWidth: 0,
-    backgroundColor: primaryColor,
+    backgroundColor: COLORS.primaryColor,
     borderWidth: 3,
     borderStyle: 'solid',
-    borderColor: primaryColor,
+    borderColor: COLORS.primaryColor,
     padding: 8,
     shadowColor: 'rgba(0, 0, 0, 0.45)',
     shadowOffset: { width: 0, height: 4 },
@@ -26,7 +26,7 @@ export default {
   },
 
   texto: {
-    color: textColor,
+    color: COLORS.textColor,
     fontSize: 20,
     fontFamily: 'Arial',
     fontWeight: '700',

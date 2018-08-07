@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Picker } from 'react-native'
+
 import OpsGasteiObjetivo from 'components/generic/ogObjetivo'
-import { Icons } from 'react-native-fontawesome'
 import STYLES from './ogObjetivoIncompletoStyle'
 
 class OpsGasteiObjetivoIncompleto extends Component {
@@ -55,9 +55,8 @@ class OpsGasteiObjetivoIncompleto extends Component {
           style={STYLES.dropdown}
           onValueChange={() => this.state.acao()}
           mode="dropdown"
-          itemStyle={{ fontFamily: 'fontawesome', fontSize: 20 }}
         >
-          <Picker.Item label="Excluir" value={this.prepararExclusao} style={{ fontFamily: 'fontawesome', fontSize: 20 }} />
+          <Picker.Item label="Excluir" value={this.prepararExclusao} />
           <Picker.Item label="Completar" value={this.prepararCompletar} />
         </Picker>
       </OpsGasteiObjetivo>

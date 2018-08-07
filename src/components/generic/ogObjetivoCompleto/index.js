@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { TouchableOpacity } from 'react-native'
+import { Icons } from 'react-native-fontawesome'
+import PropTypes from 'prop-types'
+
 import OpsGasteiObjetivo from 'components/ogObjetivo'
 import OpsGasteiIcone from 'components/generic/ogIcone'
-import { Icons } from 'react-native-fontawesome'
 import STYLES from './ogObjetivoCompletoStyle'
 
 class OpsGasteiObjetivoCompleto extends Component {

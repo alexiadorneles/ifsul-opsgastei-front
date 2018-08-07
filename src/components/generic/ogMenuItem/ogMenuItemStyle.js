@@ -1,3 +1,5 @@
+import COLORS from 'constants/colors'
+
 const containerDefault = {
   paddingVertical: 5,
 }
@@ -10,7 +12,7 @@ export default {
   containerAtivo: {
     ...containerDefault,
     borderBottomWidth: 2,
-    borderBottomColor: '#65c3ab',
+    borderBottomColor: COLORS.primary,
   },
 
   texto: {

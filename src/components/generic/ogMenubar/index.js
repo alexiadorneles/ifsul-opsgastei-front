@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
+
 import MenuItem from 'objects/MenuItem'
 import OpsGasteiMenuItem from 'components/generic/ogMenuItem'
 import STYLES from './ogMenubarStyle'
@@ -20,22 +21,22 @@ class OpsGasteiMenubar extends Component {
     this.initOptions()
   }
 
-  buscarMes() {
-    // const title = 'Buscar Meses'
-    // const text = 'Selecione o mês que deseja visualizar:'
-    // const inputOptions = {
-    //   type: 'month',
-    // }
-    // _swalService.input({ title, text, inputOptions }, this.carregarMes)
-  }
+  // buscarMes() {
+  // const title = 'Buscar Meses'
+  // const text = 'Selecione o mês que deseja visualizar:'
+  // const inputOptions = {
+  //   type: 'month',
+  // }
+  // _swalService.input({ title, text, inputOptions }, this.carregarMes)
+  // }
 
-  carregarMes(dataParam) {
+  carregarMes() {
     // const url = 'http://localhost:9000'
     // const [ano, mes] = dataParam.split('-')
     // _$window.location.href = `${url}/outro-mes/${ano}/${mes}`
   }
 
-  verificarAtivo(urlEsperado) {
+  verificarAtivo() {
     // return _$location.$$absUrl.endsWith(urlEsperado)
   }
 
@@ -105,7 +106,6 @@ class OpsGasteiMenubar extends Component {
   }
 
   renderMenuItem() {
-    console.log(this.state)
     const { menuItems } = this.state
     return menuItems.map(menuItem => {
       return <OpsGasteiMenuItem key={menuItem.icone} menuItem={menuItem} />

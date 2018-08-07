@@ -1,3 +1,5 @@
+import COLORS from 'constants/colors'
+
 export default {
   objetivoContainer: {
     marginBottom: 25,
@@ -29,7 +31,7 @@ export default {
 
   type: {
     fontSize: 20,
-    color: '#7b7b7b',
+    color: COLORS.darkGrey,
   },
 
   infoCategoriaNome: {
@@ -46,11 +48,11 @@ export default {
     alignItems: 'center',
     margin: 10,
     completar: {
-      color: '#209111',
+      color: COLORS.green,
     },
     deletar: {
       paddingRight: 7,
-      color: '#d80f0f',
+      color: COLORS.red,
     },
   },
 

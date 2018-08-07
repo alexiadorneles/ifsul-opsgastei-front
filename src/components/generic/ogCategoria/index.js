@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { Text, View, TouchableOpacity } from 'react-native'
+import { Text, View } from 'react-native'
+import PropTypes from 'prop-types'
+
 import STYLES from './ogCategoriaStyle'
 
 class OpsGasteiCategoria extends Component {
-  constructor() {
-    super()
+  static propTypes = {
+    categoria: PropTypes.object,
   }
 
   render() {

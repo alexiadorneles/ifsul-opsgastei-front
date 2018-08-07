@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import { TouchableOpacity, Text, View } from 'react-native'
 import { Icons } from 'react-native-fontawesome'
+import PropTypes from 'prop-types'
+
 import OpsGasteiIcone from 'components/generic/ogIcone'
 import STYLES from './ogMenuItemStyle'
 
-
 class OpsGasteiMenuItem extends Component {
+  static propTypes = {
+    menuItem: PropTypes.object,
+  }
+
   render() {
     const { menuItem } = this.props
     return (

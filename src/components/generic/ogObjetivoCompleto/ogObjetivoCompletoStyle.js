@@ -1,3 +1,5 @@
+import COLORS from 'constants/colors'
+
 export default {
   icone: {
     fontSize: 40,
@@ -5,6 +7,6 @@ export default {
 
   deletarObjetivoCompleto: {
     alignSelf: 'flex-end',
-    color: '#d80f0f',
+    color: COLORS.red,
   },
 }

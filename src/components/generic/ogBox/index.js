@@ -1,9 +1,18 @@
 import React, { Component } from 'react'
 import { Text, View, TouchableNativeFeedback } from 'react-native'
+import PropTypes from 'prop-types'
+
 import STYLES from './ogBoxStyle'
+
+const LOCAL_STATE = {}
 
 class OpsGasteiBox extends Component {
   state = { showBody: true }
+  static propTypes = {
+    children: PropTypes.Component,
+    ogTitle: PropTypes.string,
+  }
+
   constructor() {
     super()
 
@@ -11,8 +20,8 @@ class OpsGasteiBox extends Component {
   }
 
   toggle() {
-    this.state.showBody = !this.state.showBody
-    this.setState(this.state)
+    LOCAL_STATE.showBody = !this.state.showBody
+    this.setState(LOCAL_STATE)
   }
 
   renderChildren() {
