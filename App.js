@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react'
-import { Platform, StyleSheet, Text, View, ScrollView } from 'react-native'
+import { StyleSheet, View, ScrollView } from 'react-native'
 
 // import OpsGasteiBox from './src/components/generic/ogBox'
 // import OpsGasteiButton from './src/components/generic/ogButton'
@@ -15,10 +15,11 @@ import { Platform, StyleSheet, Text, View, ScrollView } from 'react-native'
 // import OpsGasteiGastoFixo from './src/components/generic/ogGastoFixo'
 // import OpsGasteiLogo from 'components/generic/ogLogo'
 import OpsGasteiMenuBar from 'components/generic/ogMenubar'
+import OpsGasteiObjetivoIncompleto from 'components/generic/ogObjetivoIncompleto'
 
 
 // type Props = {};
-// const categoria = { nome: 'COMIDA' }
+const categoria = { nome: 'COMIDA' }
 // const gastoFixo = {
 //   nome: 'Almoço',
 //   opcoes: true,
@@ -26,7 +27,18 @@ import OpsGasteiMenuBar from 'components/generic/ogMenubar'
 //   duracaoMeses: 2,
 //   categoria,
 // }
+
+const objetivo = {
+  nome: 'Xis',
+  valor: 15,
+  categoria,
+}
+
 export default class App extends Component {
+  teste() {
+
+  }
+
   render() {
     return (
       // <View style={styles.container}>
@@ -47,7 +59,9 @@ export default class App extends Component {
       // </OpsGasteiBox>
 
       <View style={styles.container}>
-        <ScrollView></ScrollView>
+        <ScrollView>
+          <OpsGasteiObjetivoIncompleto objetivo={objetivo} callbackAcao={this.teste} />
+        </ScrollView>
         <OpsGasteiMenuBar></OpsGasteiMenuBar>
       </View>
 
