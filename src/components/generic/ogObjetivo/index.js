@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 import PropTypes from 'prop-types'
 
+import OpsGasteiTagCategoria from 'components/generic/ogTagCategoria'
 import STYLES from './ogObjetivoStyle'
 
 class OpsGasteiObjetivo extends Component {
@@ -22,10 +23,10 @@ class OpsGasteiObjetivo extends Component {
 
         <View style={STYLES.info}>
           <Text style={STYLES.type}>Valor: {objetivo.valor} </Text>
-          <View>
-            <Text style={STYLES.type}>Categoria:</Text>
+          <View style={STYLES.categoria}>
+            <Text style={STYLES.type}>Categoria: </Text>
             <Text style={STYLES.infoCategoriaNome}>{objetivo.categoria.nome}</Text>
-            {/* <OpsGasteiTagCategoria icone={objetivo.categoria.icone} cor={objetivo.categoria.cor} /> */}
+            <OpsGasteiTagCategoria icone={objetivo.categoria.icone} cor={objetivo.categoria.cor} />
           </View>
         </View>
       </View >

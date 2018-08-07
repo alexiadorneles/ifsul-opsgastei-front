@@ -7,7 +7,7 @@ export default {
 
   objetivoTitle: {
     paddingHorizontal: 20,
-    paddingVertical: 20,
+    paddingVertical: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -20,7 +20,7 @@ export default {
   },
 
   info: {
-    paddingLeft: 15,
+    paddingLeft: 40,
   },
 
   infoCategoria: {
@@ -60,5 +60,11 @@ export default {
     marginVertical: 0,
     marginHorizontal: 10,
     fontSize: 30,
+  },
+
+  categoria: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
 }

@@ -10,7 +10,7 @@ class OpsGasteiBox extends Component {
   state = { showBody: true }
   static propTypes = {
     children: PropTypes.Component,
-    ogTitle: PropTypes.string,
+    title: PropTypes.string,
   }
 
   constructor() {
@@ -38,7 +38,7 @@ class OpsGasteiBox extends Component {
         <View style={STYLES.ogBox}>
           <View style={STYLES.boxHeader}>
             <TouchableNativeFeedback onPress={this.toggle}>
-              <Text style={STYLES.textStyle}>{this.props.ogTitle.toUpperCase()}</Text>
+              <Text style={STYLES.textStyle}>{this.props.title.toUpperCase()}</Text>
             </TouchableNativeFeedback>
           </View>
 

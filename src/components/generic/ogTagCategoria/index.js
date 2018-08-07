@@ -1,8 +1,31 @@
-import angular from 'angular'
-import component from './ogTagCategoriaComponent'
+import React, { Component } from 'react'
+import { View } from 'react-native'
+import PropTypes from 'prop-types'
 
-import './ogTagCategoria.scss'
+import OpsGasteiIcone from 'components/generic/ogIcone'
+import STYLES from './ogTagCategoriaStyle'
+import COLORS from 'constants/colors'
 
-export default angular.module('generic.ogTagCategoria', [])
-  .component('ogTagCategoria', component)
-  .name
+class OpsGasteiTagCategoria extends Component {
+  static propTypes = {
+    cor: PropTypes.string,
+    icone: PropTypes.string,
+  }
+
+  render() {
+    const { cor, icone } = this.props
+    const categoriaStyle = {
+      ...STYLES.tag,
+      backgroundColor: cor,
+    }
+    return (
+      <View style={STYLES.container}>
+        <View style={categoriaStyle} >
+          <OpsGasteiIcone icone={icone} cor={COLORS.text} />
+        </View>
+      </View>
+    )
+  }
+}
+
+export default OpsGasteiTagCategoria

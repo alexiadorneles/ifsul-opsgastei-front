@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { TouchableOpacity, Text, View } from 'react-native'
-import { Icons } from 'react-native-fontawesome'
 import PropTypes from 'prop-types'
 
 import OpsGasteiIcone from 'components/generic/ogIcone'
@@ -19,7 +18,7 @@ class OpsGasteiMenuItem extends Component {
         onPress={menuItem.onClick}
       >
         <View style={STYLES.iconContainer}>
-          <OpsGasteiIcone icone={Icons[menuItem.icone]} />
+          <OpsGasteiIcone icone={menuItem.icone} />
           <Text style={STYLES.texto}> {menuItem.title} </Text>
         </View>
       </TouchableOpacity>

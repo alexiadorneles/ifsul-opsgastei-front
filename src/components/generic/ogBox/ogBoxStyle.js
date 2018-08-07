@@ -12,7 +12,7 @@ export default {
     flexDirection: 'column',
     alignItems: 'center',
     position: 'relative',
-    height: 300,
+    minHeight: 250,
   },
 
   boxContainer: {
@@ -28,20 +28,18 @@ export default {
     alignItems: 'flex-end',
     alignSelf: 'stretch',
     borderTopWidth: 0,
-    height: 250,
+    height: 200,
   },
 
   boxBody: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'flex-end',
+    justifyContent: 'flex-start',
+    alignItems: 'stretch',
     borderColor: BORDER.color,
     borderWidth: BORDER.width,
     borderStyle: BORDER.style,
-    alignSelf: 'stretch',
     borderTopWidth: 0,
-    height: 250,
+    minHeight: 200,
   },
 
   boxHeader: {

@@ -9,7 +9,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, ScrollView } from 'react-native'
 
-// import OpsGasteiBox from './src/components/generic/ogBox'
+import OpsGasteiBox from './src/components/generic/ogBox'
 // import OpsGasteiButton from './src/components/generic/ogButton'
 // import OpsGasteiCategoria from './src/components/generic/ogCategoria'
 // import OpsGasteiGastoFixo from './src/components/generic/ogGastoFixo'
@@ -21,7 +21,7 @@ import OpsGasteiSaldo from 'components/generic/ogSaldo'
 
 
 // type Props = {};
-const categoria = { nome: 'COMIDA' }
+const categoria = { nome: 'Comida', cor: 'red', icone: 'cutlery' }
 // const gastoFixo = {
 //   nome: 'Almoço',
 //   opcoes: true,
@@ -64,7 +64,9 @@ export default class App extends Component {
         <OpsGasteiNavbar title="julho" />
         <ScrollView>
           <OpsGasteiSaldo />
-          <OpsGasteiObjetivoIncompleto objetivo={objetivo} callbackAcao={this.teste} />
+          <OpsGasteiBox title="Objetivos Incompletos">
+            <OpsGasteiObjetivoIncompleto objetivo={objetivo} callbackAcao={this.teste} />
+          </OpsGasteiBox>
         </ScrollView>
         <OpsGasteiMenuBar />
       </View>

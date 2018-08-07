@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { TouchableOpacity } from 'react-native'
-import { Icons } from 'react-native-fontawesome'
 import PropTypes from 'prop-types'
 
 import OpsGasteiObjetivo from 'components/ogObjetivo'
@@ -35,7 +34,7 @@ class OpsGasteiObjetivoCompleto extends Component {
     return (
       <OpsGasteiObjetivo objetivo={this.props.objetivo}>
         <TouchableOpacity style={STYLES.deletarObjetivoCompleto} onPress={this.prepararExclusao}>
-          <OpsGasteiIcone style={STYLES.icone} icone={Icons.faTimes} />
+          <OpsGasteiIcone style={STYLES.icone} icone='faTimes' />
         </TouchableOpacity>
       </OpsGasteiObjetivo>
     )

@@ -7,7 +7,7 @@ class OpsGasteiSaldo extends Component {
   state = {
     salario: 1800,
     valorSaldoExibicao: 1350,
-    valorSaldo: -10,
+    valorSaldo: 1350,
   }
 
   pegarSaldo() {
