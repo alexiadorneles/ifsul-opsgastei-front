@@ -19,6 +19,7 @@ import OpsGasteiObjetivoIncompleto from 'components/generic/ogObjetivoIncompleto
 import OpsGasteiNavbar from 'components/generic/ogNavbar'
 import OpsGasteiSaldo from 'components/generic/ogSaldo'
 import OpsGasteiTotalizador from 'components/generic/ogTotalizador'
+import OpsGasteiGrafico from 'components/generic/ogGrafico'
 
 
 // type Props = {};
@@ -70,11 +71,12 @@ export default class App extends Component {
       <View style={styles.container}>
         <OpsGasteiNavbar title="julho" />
         <ScrollView>
-          <OpsGasteiSaldo />
+          <OpsGasteiGrafico />
+          {/* <OpsGasteiSaldo />
           <OpsGasteiBox title="Objetivos Incompletos">
             <OpsGasteiObjetivoIncompleto objetivo={objetivo} callbackAcao={this.teste} />
             <OpsGasteiTotalizador objetivos={objetivos} />
-          </OpsGasteiBox>
+          </OpsGasteiBox> */}
         </ScrollView>
         <OpsGasteiMenuBar />
       </View>
