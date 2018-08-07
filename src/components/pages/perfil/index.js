@@ -1,8 +1,46 @@
-import angular from 'angular'
-import component from './perfilComponent'
+import React, { Component } from 'react'
+import { Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native'
+import PropTypes from 'prop-types'
 
-import './perfil.scss'
+import Background from 'assets/img/header.png'
+import STYLES from './perfilStyle'
 
-export default angular.module('pages.perfil', [])
-  .component('perfil', component)
-  .name
+class Perfil extends Component {
+  static propTypes = {
+    usuario: PropTypes.object,
+    salarioAtual: PropTypes.object,
+  }
+
+  render() {
+    const { usuario, salarioAtual } = this.props
+    const lastListItemStyle = { ...STYLES.listItem }
+    lastListItemStyle.borderBottomWidth = 0
+
+    return (
+      <View style={STYLES.container}>
+        <ImageBackground style={STYLES.headerProfile} source={Background}>
+          <Image style={STYLES.picture} source={usuario.picture} />
+          <Text style={STYLES.nome}> {usuario.nome} </Text>
+          <Text style={STYLES.cash}> {salarioAtual.valor} </Text>
+        </ImageBackground>
+
+        <View style={STYLES.list}>
+          <TouchableOpacity onPress={this.editarReceita}>
+            <Text style={STYLES.listItem}> Editar Receitas </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.goToCategorias}>
+            <Text style={STYLES.listItem}> Categorias </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.goToTutorial}>
+            <Text style={STYLES.listItem}> Rever Tutorial </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.logout}>
+            <Text style={lastListItemStyle}> Sair </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    )
+  }
+}
+
+export default Perfil
