@@ -508,6 +508,25 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
+"@types/prop-types@*":
+  version "15.5.4"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.4.tgz#9e6199bad131786e24c2baa2a82705a02139fbf8"
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-native@*":
+  version "0.56.6"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.56.6.tgz#d9c60e1df95ec0402fa956225558c8a48f37f23f"
+  dependencies:
+    "@types/react" "*"
+
+"@types/react@*":
+  version "16.4.8"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.8.tgz#ff0440429783df0927bdcd430fa1225f7c08cf36"
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
 abab@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -1765,6 +1784,10 @@ color@^2.0.1:
     color-convert "^1.9.1"
     color-string "^1.5.2"
 
+colorsys@^1.0.17:
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/colorsys/-/colorsys-1.0.21.tgz#f35044e182376f6ec4730668ddc0ad3269530523"
+
 combined-stream@1.0.6, combined-stream@~1.0.5:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/combined-stream/-/combined-stream-1.0.6.tgz#723e7df6e801ac5613113a7e445a9b69cb632818"
@@ -1884,6 +1907,10 @@ cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   resolved "https://registry.yarnpkg.com/cssstyle/-/cssstyle-0.3.1.tgz#6da9b4cff1bc5d716e6e5fe8e04fcb1b50a49adf"
   dependencies:
     cssom "0.3.x"
+
+csstype@^2.2.0:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.5.6.tgz#2ae1db2319642d8b80a668d2d025c6196071e788"
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -4073,6 +4100,10 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
+moment@2.19.3:
+  version "2.19.3"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.3.tgz#bdb99d270d6d7fda78cc0fbace855e27fe7da69f"
+
 morgan@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/morgan/-/morgan-1.9.0.tgz#d01fa6c65859b76fcf31b3cb53a3821a311d8051"
@@ -4574,7 +4605,7 @@ prompts@^0.1.9:
     kleur "^1.0.0"
     sisteransi "^0.1.1"
 
-prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -4641,6 +4672,19 @@ react-is@^16.4.1:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
 
+react-native-color-picker@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-color-picker/-/react-native-color-picker-0.4.0.tgz#801a413a20b833ea8aa9b10418c3761dd4d88fb6"
+  dependencies:
+    prop-types "^15.5.10"
+    tinycolor2 "^1.4.1"
+
+react-native-color-wheel@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/react-native-color-wheel/-/react-native-color-wheel-0.1.5.tgz#b72be86fe82c0081af9225029c1c408a64c23959"
+  dependencies:
+    colorsys "^1.0.17"
+
 react-native-fontawesome@^5.7.0:
   version "5.7.0"
   resolved "https://registry.yarnpkg.com/react-native-fontawesome/-/react-native-fontawesome-5.7.0.tgz#7bfe57c21c6522d05eaf206474903c3f299bfc0d"
@@ -4648,6 +4692,15 @@ react-native-fontawesome@^5.7.0:
 react-native-masked-input@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/react-native-masked-input/-/react-native-masked-input-1.0.3.tgz#be205f396e74b6896d514b597649c9d26014b2a9"
+
+react-native-masked-text@^1.7.2:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/react-native-masked-text/-/react-native-masked-text-1.7.2.tgz#82dadbd19c856354a99bbac6e218b5e6a4365157"
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
+    moment "2.19.3"
+    tinymask "^1.0.2"
 
 react-native-picker@4.3.7:
   version "4.3.7"
@@ -5484,6 +5537,14 @@ through@^2.3.6:
 time-stamp@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/time-stamp/-/time-stamp-1.1.0.tgz#764a5a11af50561921b133f3b44e618687e0f5c3"
+
+tinycolor2@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
+
+tinymask@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/tinymask/-/tinymask-1.0.2.tgz#df3775a94087b0d3d056c256e8923c01b7ec0941"
 
 tmp@^0.0.33:
   version "0.0.33"

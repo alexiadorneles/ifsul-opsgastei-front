@@ -1,6 +1,6 @@
 export default {
   container: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
   },
@@ -11,6 +11,5 @@ export default {
     borderRadius: 10,
     height: 30,
     width: 30,
-    marginRight: 20,
   },
 }

@@ -10,6 +10,7 @@ class OpsGasteiButton extends Component {
     onClick: PropTypes.function,
     label: PropTypes.string,
     model: PropTypes.object,
+    if: PropTypes.boolean || PropTypes.function,
   }
 
   constructor() {
@@ -23,7 +24,15 @@ class OpsGasteiButton extends Component {
     onClick(model)
   }
 
+  deveRenderizarComponente() {
+    const condicao = this.props.if
+    if (condicao === undefined) return true
+    if (typeof condicao === 'function') return condicao()
+    return condicao
+  }
+
   render() {
+    if (!this.deveRenderizarComponente()) return null
     STYLES.botao.width = this.props.width
     return (
       <View style={STYLES.buttonContainer}>

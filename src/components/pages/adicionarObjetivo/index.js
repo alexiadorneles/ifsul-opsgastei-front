@@ -55,9 +55,9 @@ class AdicionarObjetivo extends Component {
 
   render() {
     return (
-      <View style={STYLES.container}>
+      <View style={STYLES.pageContainer}>
         <View style={STYLES.adicionarObjetivoContainer}>
-          <Text style={STYLES.title}> NOVO OBJETIVO </Text>
+          <Text style={STYLES.pageTitle}> NOVO OBJETIVO </Text>
           <TextInput
             style={STYLES.input}
             placeholder="Nome"
