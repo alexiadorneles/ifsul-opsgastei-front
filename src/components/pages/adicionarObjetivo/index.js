@@ -1,16 +1,12 @@
 import React, { Component } from 'react'
 import { Text, View, TextInput, Picker } from 'react-native'
 import MaskedInput from 'react-native-masked-input'
-import PropTypes from 'prop-types'
 
 import OpsGasteiButton from 'components/generic/ogButton'
 import STYLES from './adicionarObjetivoStyle'
 
 class AdicionarObjetivo extends Component {
-  static propTypes = {
-    usuario: PropTypes.object,
-    salarioAtual: PropTypes.object,
-  }
+  state = { objetivo: {} }
 
   constructor() {
     super()
@@ -19,6 +15,7 @@ class AdicionarObjetivo extends Component {
     this.adicionar = this.adicionar.bind(this)
     this.objetivoAdicionado = this.objetivoAdicionado.bind(this)
     this.buscarCategorias = this.buscarCategorias.bind(this)
+    this.atualizarPropriedadeObjetivoEState = this.atualizarPropriedadeObjetivoEState.bind(this)
   }
 
   objetivoAdicionado() {
@@ -37,11 +34,22 @@ class AdicionarObjetivo extends Component {
 
   buscarCategorias() {
     // _categoriaService.buscarPorUsuario().then(res => this.categorias = res.data)
-    return [{ label: 'Comida' }]
+    return [{ nome: 'Comida' }, { nome: 'Vestuário' }, { nome: 'Alimentação' }, { nome: 'Transporte' }]
+  }
+
+  atualizarPropriedadeObjetivoEState(prop, value) {
+    const { objetivo } = this.state
+    objetivo[prop] = value
+    this.setState({ objetivo })
   }
 
   renderPickerItems() {
-    const { categorias } = this.buscarCategorias()
+    const { categoria } = this.state.objetivo
+    const categorias = this.buscarCategorias()
+    if (categoria) {
+      categorias.splice(categorias.indexOf(categoria), 1)
+      categorias.unshift(categoria)
+    }
     return categorias.map(cat => <Picker.Item key={cat.nome} label={cat.nome} value={cat} />)
   }
 
@@ -53,7 +61,8 @@ class AdicionarObjetivo extends Component {
           <TextInput
             style={STYLES.input}
             placeholder="Nome"
-            onChangeText={(nomeObjetivo) => this.setState({ nomeObjetivo })}
+            value={this.state.objetivo.nome}
+            onChangeText={text => this.atualizarPropriedadeObjetivoEState('nome', text)}
           />
           <MaskedInput
             style={STYLES.input}
@@ -61,11 +70,14 @@ class AdicionarObjetivo extends Component {
             maskType="money"
             currencySymbol="R$"
             currencySeparator=","
+            onChangeText={valor => this.atualizarPropriedadeObjetivoEState('valor', valor)}
           />
           <Picker
             selectedValue={this.state.objetivo.categoria}
             style={STYLES.input}
-            onValueChange={(categoria) => this.setState({ categoria })}
+            value={this.state.objetivo.categoria}
+            prompt="Escolha a Categoria"
+            onValueChange={categoria => this.atualizarPropriedadeObjetivoEState('categoria', categoria)}
           >
             {this.renderPickerItems()}
           </Picker>

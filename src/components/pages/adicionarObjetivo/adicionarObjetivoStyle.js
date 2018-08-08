@@ -6,4 +6,17 @@ export default {
   adicionarObjetivoContainer: {
     marginTop: 10,
   },
+
+  container: {
+    padding: 30,
+  },
+
+  title: {
+    fontSize: 20,
+    alignSelf: 'center',
+  },
+
+  input: {
+    marginVertical: 20,
+  },
 }

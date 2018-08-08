@@ -4,6 +4,7 @@ import { View, ScrollView } from 'react-native'
 import OpsGasteiMenuBar from 'components/generic/ogMenubar'
 import OpsGasteiNavbar from 'components/generic/ogNavbar'
 import Perfil from 'components/pages/perfil'
+import AdicionarObjetivo from 'components/pages/adicionarObjetivo'
 import Icone from 'assets/img/icone.png'
 
 const usuario = {
@@ -18,7 +19,8 @@ export default class App extends Component {
       <View style={{ flex: 1 }}>
         <OpsGasteiNavbar title="julho" />
         <ScrollView contentContainerStyle={{ flex: 1 }}>
-          <Perfil usuario={usuario} salarioAtual={salarioAtual} />
+          <AdicionarObjetivo />
+          {/* <Perfil usuario={usuario} salarioAtual={salarioAtual} /> */}
         </ScrollView>
         <OpsGasteiMenuBar />
       </View>

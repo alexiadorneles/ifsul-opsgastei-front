@@ -12,6 +12,12 @@ class OpsGasteiButton extends Component {
     model: PropTypes.object,
   }
 
+  constructor() {
+    super()
+
+    this.onClick = this.onClick.bind(this)
+  }
+
   onClick() {
     const { onClick, model } = this.props
     onClick(model)
