@@ -8,7 +8,7 @@ import AdicionarObjetivo from 'components/pages/adicionarObjetivo'
 import Categorias from 'components/pages/categorias'
 import Icone from 'assets/img/icone.png'
 import { Dimensions,  View } from 'react-native'
-import { ColorWheel } from 'react-native-color-wheel';
+import { ColorWheel } from 'react-native-color-wheel'
 
 const usuario = {
   nome: 'Aléxia Dorneles',
