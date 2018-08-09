@@ -5,7 +5,9 @@ export default {
   },
 
   title: {
-    fontWeight: 'bold',
-    fontSize: 30,
+    fontWeight: '600',
+    fontSize: 20,
+    marginVertical: 10,
+    alignSelf: 'center',
   },
 }

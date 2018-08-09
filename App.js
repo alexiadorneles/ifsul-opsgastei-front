@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, ScrollView } from 'react-native'
 import Categorias from 'components/pages/categorias'
+import Estatistica from 'components/pages/estatistica'
 import OpsGasteiNavbar from 'components/generic/ogNavbar'
 import OpsGasteiMenuBar from 'components/generic/ogMenubar'
 
@@ -10,7 +11,8 @@ export default class App extends Component {
       <View style={{ flex: 1 }}>
         <OpsGasteiNavbar title="julho" />
         <ScrollView contentContainerStyle={{ flex: 1 }}>
-          <Categorias />
+          <Estatistica />
+          {/* <Categorias /> */}
           {/* <AdicionarObjetivo /> */}
           {/* <Perfil usuario={usuario} salarioAtual={salarioAtual} /> */}
         </ScrollView>
