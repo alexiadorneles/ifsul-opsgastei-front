@@ -4,6 +4,7 @@ export default {
   ...DEFAULT_STYLES,
 
   container: {
+    flex: 1,
     marginTop: 15,
   },
 
@@ -11,6 +12,10 @@ export default {
     flex: 1,
     marginTop: 5,
     alignSelf: 'center',
+  },
+
+  buttonContainer: {
+    flexShrink: 1,
   },
 }
 

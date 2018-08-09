@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View, TextInput } from 'react-native'
 import { ColorWheel } from 'react-native-color-wheel'
-import {
-  Dimensions,
-  StyleSheet,
-  View
-} from 'react-native'
+import { ColorPicker } from 'react-native-color-picker'
+
 
 import OpsGasteiButton from 'components/generic/ogButton'
 import STYLES from './adicionarCategoriaStyle'
@@ -41,7 +38,7 @@ class AdicionarCategoria extends Component {
   }
 
   renderAdicionarCategoria() {
-    console.log(this.state)
+    console.log(colorsys.hsv2Hex(this.state.categoria.cor))
     if (!this.state.showAdicionar) return null
     return (
       <View style={STYLES.adicionarCategoria}>
@@ -54,14 +51,15 @@ class AdicionarCategoria extends Component {
         />
 
         <View style={{flex: 1}}>
-          <ColorWheel
+          {/* <ColorWheel
             initialColor="#ee0000"
-            onColorChange={color => console.log({color})}
-            style={{width: Dimensions.get('window').width}}
-            thumbStyle={{ height: 30, width: 30, borderRadius: 30}} />
-          <ColorWheel
-            initialColor="#00ee00"
-            style={{ marginLeft: 20, padding: 40, height: 200, width: 200 }} />
+            onColorChange={color => this.atualizarPropriedadeCategoriaEState('cor', color)}
+            style={{flex: 1}}
+            thumbStyle={{ height: 30, width: 30, borderRadius: 30}} /> */}
+            <ColorPicker
+              onColorSelected={color => alert(`Color selected: ${color}`)}
+              style={{flex: 1}}
+            />
         </View>
       </View>
     )
@@ -72,8 +70,10 @@ class AdicionarCategoria extends Component {
       <View style={STYLES.container}>
         {this.renderAdicionarCategoria()}
 
-        <OpsGasteiButton label="Adicionar Categoria" if={!this.state.showAdicionar} onClick={this.mostrarAdicionar} />
-        {/* <OpsGasteiButton label="Adicionar Categoria" if={this.state.showAdicionar} onClick={this.adicionar} model={this.state.categoria} /> */}
+        <View style={STYLES.buttonContainer}>
+          <OpsGasteiButton label="Adicionar Categoria" if={!this.state.showAdicionar} onClick={this.mostrarAdicionar} />
+          <OpsGasteiButton label="Adicionar Categoria" if={this.state.showAdicionar} onClick={this.adicionar} model={this.state.categoria} />
+        </View>
 
       </View>
     )
