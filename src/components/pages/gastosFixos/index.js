@@ -1,11 +1,97 @@
-import angular from 'angular'
-import gfAdicionarGasto from './gfAdicionarGasto'
-import component from './gastosFixosComponent'
+import React, { Component } from 'react'
+import { Text, ScrollView } from 'react-native'
 
-import './gastosFixos.scss'
+import OpsGasteiGastoFixo from 'components/generic/ogGastoFixo'
+import AdicionarGastoFixo from './adicionarGastoFixo'
+import STYLES from './gastosFixosStyle'
 
-export default angular.module('pages.gastosFixos', [
-  gfAdicionarGasto,
-])
-  .component('gastosFixos', component)
-  .name
+class GastosFixos extends Component {
+  state = { gastosFixos: [] }
+  constructor() {
+    super()
+
+    //bindings
+    this.buscarGastosFixos = this.buscarGastosFixos.bind(this)
+  }
+
+  componentDidMount() {
+    this.buscarCategorias()
+    this.buscarGastosFixos()
+  }
+
+  buscarCategorias() {
+    const response = {
+      data: [
+        {
+          nome: 'Comida',
+          cor: 'red',
+        },
+        {
+          nome: 'Música',
+          cor: 'blue',
+        },
+        {
+          nome: 'Entretenimento',
+          cor: 'green',
+        },
+      ],
+    }
+    // _categoriaService.buscarPorUsuario().then(response => {
+    const categorias = response.data
+    this.setState({ categorias })
+    // })
+  }
+
+  buscarGastosFixos() {
+    const response = {
+      data: [
+        {
+          nome: 'Almoço',
+          valor: 200,
+          categoria: {
+            nome: 'Comida',
+            cor: 'red',
+          },
+        },
+        {
+          nome: 'Spotify',
+          valor: 25,
+          categoria: {
+            nome: 'Música',
+            cor: 'blue',
+          },
+        },
+        {
+          nome: 'Netflix',
+          valor: 50,
+          categoria: {
+            nome: 'Entretenimento',
+            cor: 'green',
+          },
+        },
+      ],
+    }
+    // _gastoFixoService.buscarPorUsuario().then(response => {
+    const gastosFixos = response.data
+    this.setState({ gastosFixos })
+    // })
+  }
+  renderGastos() {
+    const { gastosFixos } = this.state
+    return gastosFixos.map(gf => <OpsGasteiGastoFixo key={gf.nome} gastoFixo={gf} callbackExcluir={this.buscarGastosFixos} />)
+  }
+
+  render() {
+    console.log('categoriaaas', this.state.categorias)
+    return (
+      <ScrollView style={STYLES.pageContainer}>
+        <Text style={STYLES.pageTitle}> GASTOS FIXOS </Text>
+        {this.renderGastos()}
+
+        <AdicionarGastoFixo categorias={this.state.categorias} callbackAdicionar={this.buscarGastosFixos} />
+      </ScrollView>
+    )
+  }
+}
+
+export default GastosFixos

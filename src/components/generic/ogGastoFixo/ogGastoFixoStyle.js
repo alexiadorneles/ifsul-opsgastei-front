@@ -9,13 +9,10 @@ export default {
   },
 
   gastoTitle: {
-    alignSelf: 'flex-start',
-    // paddingTop: 8,
-    // paddingBottom: 8,
-    // paddingRight: 20,
-    // paddingLeft: 20,
-    // alignItems: 'center',
-    // justifyContent: 'space-between',
+    alignSelf: 'stretch',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
 
   texto: {
@@ -24,33 +21,41 @@ export default {
     margin: 0,
   },
 
-  info: {
-    fontSize: 20,
+  innerContainer: {
     paddingLeft: 15,
-    marginBottom: 20,
   },
 
-  op: {
-    fontWeight: '600',
-    textTransform: 'capitalize',
-    fontSize: 18,
-    alignItems: 'center',
-  },
-
-  type: {
+  text: {
+    marginTop: 5,
     color: COLORS.darkGrey,
   },
 
   opcoes: {
+    borderRadius: 10,
+    marginTop: 30,
     padding: 8,
+    backgroundColor: COLORS.borderWrapper,
+    position: 'absolute',
+    right: 0,
+    elevation: 2,
   },
 
-  infoCategoriaNome: {
-    marginRight: 5,
-  },
-
-  infoCategoria: {
+  opItemContainer: {
+    marginVertical: 10,
     flexDirection: 'row',
+  },
+
+  op: {
+  },
+
+  categoria: {
+    width: '100%',
+    paddingRight: 15,
+    height: 40,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    alignSelf: 'stretch',
   },
 
   wrapper: {

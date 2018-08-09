@@ -8,12 +8,17 @@ import STYLES from './ogCategoriaStyle'
 class OpsGasteiCategoria extends Component {
   static propTypes = {
     categoria: PropTypes.object,
+    style: PropTypes.object,
   }
 
   render() {
-    const { categoria } = this.props
+    const { categoria, style } = this.props
+    const styleContainer = {
+      ...STYLES.categoriaContainer,
+      ...style,
+    }
     return (
-      <View style={STYLES.categoriaContainer}>
+      <View style={styleContainer}>
         <Text style={STYLES.nomeContainer}>{categoria.nome}</Text>
         <OpsGasteiTagCategoria
           cor={categoria.cor}

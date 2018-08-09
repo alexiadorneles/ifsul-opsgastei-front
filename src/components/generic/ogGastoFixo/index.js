@@ -1,25 +1,42 @@
 import React, { Component } from 'react'
-import { Text, View, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native'
-import FontAwesome, { Icons } from 'react-native-fontawesome'
+import { Text, View, TouchableOpacity } from 'react-native'
 import PropTypes from 'prop-types'
 
+import OpsGasteiCategoria from 'components/generic/ogCategoria'
+import OpsGasteiIcone from 'components/generic/ogIcone'
 import STYLES from './ogGastoFixoStyle'
 
 class OpsGasteiGastoFixo extends Component {
   static propTypes = {
     gastoFixo: PropTypes.object,
   }
-  state = { gastoFixo: {} }
+  state = { gastoFixo: { categoria: {} } }
 
   constructor() {
     super()
     // this.gastoFixo = this.props.gastoFixo
     // this.callbackExcluir = this.props.callbackExcluir
+
+    this.mostrarOpcoes = this.mostrarOpcoes.bind(this)
+    this.prepararExclusao = this.prepararExclusao.bind(this)
+    this.excluirGasto = this.excluirGasto.bind(this)
+    this.editar = this.editar.bind(this)
+    this.prepararEdicaoAtual = this.prepararEdicaoAtual.bind(this)
+    this.prepararEdicaoProximo = this.prepararEdicaoProximo.bind(this)
+    this.editarGastoAtual = this.editarGastoAtual.bind(this)
+    this.editarGastoProximos = this.editarGastoProximos.bind(this)
+    this.editarGastoProximos = this.editarGastoProximos.bind(this)
+  }
+
+  componentDidMount() {
+    const { gastoFixo } = this.props
+    this.setState({ gastoFixo })
   }
 
   mostrarOpcoes() {
-    this.gastoFixo.opcoes = !this.gastoFixo.opcoes
-    this.setState({ gastoFixo: this.gastoFixo })
+    const { gastoFixo } = this.state
+    gastoFixo.opcoes = !gastoFixo.opcoes
+    this.setState({ gastoFixo })
   }
 
   prepararExclusao() {
@@ -75,75 +92,72 @@ class OpsGasteiGastoFixo extends Component {
     }
   }
 
-  renderOpcoes() {
-    const { gastoFixo } = this.props
+  renderOpcoes(gastoFixo) {
     if (gastoFixo.opcoes) {
       return (
         <View style={STYLES.opcoes}>
-          <TouchableWithoutFeedback
+          <TouchableOpacity
             style={STYLES.op}
             onPress={this.prepararEdicaoAtual}
           >
-            <FontAwesome style={STYLES.conf}>
-              {Icons.pencil}
+            <View style={STYLES.opItemContainer}>
+              <OpsGasteiIcone icone="pencil" />
               <Text style={STYLES.op}> Editar Atual </Text>
-            </FontAwesome>
-          </TouchableWithoutFeedback>
+            </View>
+          </TouchableOpacity>
 
-          <TouchableWithoutFeedback
+          <TouchableOpacity
             style={STYLES.op}
             onPress={this.prepararEdicaoProximo}
           >
-            <FontAwesome style={STYLES.conf}>
-              {Icons.pencil}
+            <View style={STYLES.opItemContainer}>
+              <OpsGasteiIcone icone="pencil" />
               <Text style={STYLES.op}> Editar Próximos </Text>
-            </FontAwesome>
-          </TouchableWithoutFeedback>
+            </View>
+          </TouchableOpacity>
 
-          <TouchableWithoutFeedback
+          <TouchableOpacity
             style={STYLES.op}
             onPress={this.prepararExclusao}
           >
-            <FontAwesome style={STYLES.deletarIcon}>
-              {Icons.times}
+            <View style={STYLES.opItemContainer}>
+              <OpsGasteiIcone icone="times" />
               <Text style={STYLES.op}> Excluir </Text>
-            </FontAwesome>
-          </TouchableWithoutFeedback>
-        </View>
+            </View>
+          </TouchableOpacity>
+        </View >
       )
     }
   }
 
   render() {
-    const { gastoFixo } = this.props
+    const { gastoFixo } = this.state
 
     return (
       <View style={STYLES.gastosContainer}>
-        <View style={STYLES.gastoTItle}>
+        <View style={STYLES.gastoTitle}>
           <Text style={STYLES.texto}>{gastoFixo.nome}</Text>
-          <TouchableNativeFeedback onPress={this.mostrarOpcoes}>
-            <FontAwesome style={STYLES.conf}>{Icons.cog}</FontAwesome>
-          </TouchableNativeFeedback>
+          <TouchableOpacity onPress={this.mostrarOpcoes}>
+            <OpsGasteiIcone fontSize={28} icone="cog" />
+          </TouchableOpacity>
         </View>
 
-        {this.renderOpcoes()}
+        {this.renderOpcoes(gastoFixo)}
 
-        <View style={STYLES.info}>
-          <View style={STYLES.wrapper}>
-            <Text style={STYLES.type}>Valor: </Text>
-            <Text>{gastoFixo.valor}</Text>
-          </View>
-          <View style={STYLES.wrapper}>
-            <Text style={STYLES.type}>Período: </Text>
-            <Text>{gastoFixo.duracaoMeses} meses</Text>
+        <View style={STYLES.innerContainer}>
+          <View style={STYLES.info}>
+            <View style={STYLES.wrapper}>
+              <Text style={STYLES.text}>Valor: </Text>
+              <Text style={STYLES.text}>{gastoFixo.valor}</Text>
+            </View>
+            <View style={STYLES.wrapper}>
+              <Text style={STYLES.text}>Período: </Text>
+              <Text style={STYLES.text}>{gastoFixo.duracaoMeses} meses</Text>
+            </View>
           </View>
 
           <View style={STYLES.categoria}>
-            <View style={STYLES.infoCategoria}>
-              <Text style={STYLES.type}>Categoria: </Text>
-              <Text style={STYLES.infoCategoriaNome}>{gastoFixo.categoria.nome}</Text>
-            </View>
-
+            <OpsGasteiCategoria style={STYLES.categoria} categoria={gastoFixo.categoria} />
           </View>
         </View>
       </View>

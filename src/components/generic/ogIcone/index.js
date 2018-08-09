@@ -9,6 +9,7 @@ class OpsGasteiIcone extends Component {
   static propTypes = {
     icone: PropTypes.string,
     cor: PropTypes.string,
+    fontSize: PropTypes.number,
   }
 
   render() {
@@ -16,6 +17,7 @@ class OpsGasteiIcone extends Component {
 
     const iconeStyle = { ...STYLES.icone }
     iconeStyle.color = this.props.cor
+    iconeStyle.fontSize = this.props.fontSize || iconeStyle.fontSize
     return (
       <Text style={iconeStyle}>{Icons[this.props.icone]}</Text>
     )
