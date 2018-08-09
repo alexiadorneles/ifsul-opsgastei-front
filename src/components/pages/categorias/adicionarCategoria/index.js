@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, TextInput } from 'react-native'
+import { fromHsv } from 'react-native-color-picker'
 import { ColorWheel } from 'react-native-color-wheel'
-import { ColorPicker } from 'react-native-color-picker'
-
 
 import OpsGasteiButton from 'components/generic/ogButton'
 import STYLES from './adicionarCategoriaStyle'
@@ -23,8 +22,7 @@ class AdicionarCategoria extends Component {
   }
 
   adicionar(categoria) {
-    categoria.cor = categoria.cor || '#000000'
-    console.log(categoria)
+    categoria.cor = categoria.cor || '#ffffff'
     // _categoriaService.criar(this.categoria).then(() => {
     // this.callbackAdicionar()
     // _swalService.success('Categoria adicionada.')
@@ -38,7 +36,6 @@ class AdicionarCategoria extends Component {
   }
 
   renderAdicionarCategoria() {
-    console.log(colorsys.hsv2Hex(this.state.categoria.cor))
     if (!this.state.showAdicionar) return null
     return (
       <View style={STYLES.adicionarCategoria}>
@@ -51,15 +48,11 @@ class AdicionarCategoria extends Component {
         />
 
         <View style={{flex: 1}}>
-          {/* <ColorWheel
-            initialColor="#ee0000"
-            onColorChange={color => this.atualizarPropriedadeCategoriaEState('cor', color)}
-            style={{flex: 1}}
-            thumbStyle={{ height: 30, width: 30, borderRadius: 30}} /> */}
-            <ColorPicker
-              onColorSelected={color => alert(`Color selected: ${color}`)}
-              style={{flex: 1}}
-            />
+          <ColorWheel
+            initialColor="#ffffff"
+            onColorChange={color => this.atualizarPropriedadeCategoriaEState('cor', fromHsv(color))}
+            style={STYLES.colorPicker}
+          />
         </View>
       </View>
     )

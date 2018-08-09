@@ -17,5 +17,15 @@ export default {
   buttonContainer: {
     flexShrink: 1,
   },
+
+  title: {
+    alignSelf: 'center',
+  },
+
+  colorPicker: {
+    flex: 1,
+    width: 200,
+    height: 100,
+  },
 }
 
