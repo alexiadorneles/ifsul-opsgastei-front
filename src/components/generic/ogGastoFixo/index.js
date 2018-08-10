@@ -5,12 +5,14 @@ import PropTypes from 'prop-types'
 import OpsGasteiCategoria from 'components/generic/ogCategoria'
 import OpsGasteiIcone from 'components/generic/ogIcone'
 import STYLES from './ogGastoFixoStyle'
+import OpsGasteiDisplayer from '../opsGasteiDisplayer';
 
 class OpsGasteiGastoFixo extends Component {
   static propTypes = {
     gastoFixo: PropTypes.object,
   }
-  state = { gastoFixo: { categoria: {} } }
+
+  state = { gastoFixo: { categoria: {} }, valor: 1, periodo: 1 }
 
   constructor() {
     super()
@@ -30,6 +32,8 @@ class OpsGasteiGastoFixo extends Component {
 
   componentDidMount() {
     const { gastoFixo } = this.props
+    console.log('props', gastoFixo)
+    gastoFixo.periodo = `${gastoFixo.periodo} meses`
     this.setState({ gastoFixo })
   }
 
@@ -88,7 +92,7 @@ class OpsGasteiGastoFixo extends Component {
   construirDtoEdicao(valor, gastoFixo) {
     return {
       valor,
-      gastoFixo: gastoFixo,
+      gastoFixo,
     }
   }
 
@@ -132,35 +136,41 @@ class OpsGasteiGastoFixo extends Component {
 
   render() {
     const { gastoFixo } = this.state
-
     return (
-      <View style={STYLES.gastosContainer}>
-        <View style={STYLES.gastoTitle}>
-          <Text style={STYLES.texto}>{gastoFixo.nome}</Text>
-          <TouchableOpacity onPress={this.mostrarOpcoes}>
-            <OpsGasteiIcone fontSize={28} icone="cog" />
-          </TouchableOpacity>
-        </View>
+      // <View style={STYLES.gastosContainer}>
+      //   <View style={STYLES.gastoTitle}>
+      //     <Text style={STYLES.texto}>{gastoFixo.nome}</Text>
+      //     <TouchableOpacity onPress={this.mostrarOpcoes}>
+      //       <OpsGasteiIcone fontSize={28} icone="cog" />
+      //     </TouchableOpacity>
+      //   </View>
+
+      //   {this.renderOpcoes(gastoFixo)}
+
+      //   <View style={STYLES.innerContainer}>
+      //     <View style={STYLES.info}>
+      //       <View style={STYLES.wrapper}>
+      //         <Text style={STYLES.text}>Valor: </Text>
+      //         <Text style={STYLES.text}>{gastoFixo.valor}</Text>
+      //       </View>
+      //       <View style={STYLES.wrapper}>
+      //         <Text style={STYLES.text}>Período: </Text>
+      //         <Text style={STYLES.text}>{gastoFixo.duracaoMeses} meses</Text>
+      //       </View>
+      //     </View>
+
+      //     <View style={STYLES.categoria}>
+      //       <OpsGasteiCategoria style={STYLES.categoria} categoria={gastoFixo.categoria} />
+      //     </View>
+      //   </View>
+      // </View>
+      <OpsGasteiDisplayer object={gastoFixo}>
+        <TouchableOpacity onPress={this.mostrarOpcoes}>
+          <OpsGasteiIcone fontSize={28} icone="cog" />
+        </TouchableOpacity>
 
         {this.renderOpcoes(gastoFixo)}
-
-        <View style={STYLES.innerContainer}>
-          <View style={STYLES.info}>
-            <View style={STYLES.wrapper}>
-              <Text style={STYLES.text}>Valor: </Text>
-              <Text style={STYLES.text}>{gastoFixo.valor}</Text>
-            </View>
-            <View style={STYLES.wrapper}>
-              <Text style={STYLES.text}>Período: </Text>
-              <Text style={STYLES.text}>{gastoFixo.duracaoMeses} meses</Text>
-            </View>
-          </View>
-
-          <View style={STYLES.categoria}>
-            <OpsGasteiCategoria style={STYLES.categoria} categoria={gastoFixo.categoria} />
-          </View>
-        </View>
-      </View>
+      </OpsGasteiDisplayer>
     )
   }
 }

@@ -1,11 +1,11 @@
 import COLORS from 'constants/colors'
 
 export default {
-  objetivoContainer: {
+  displayerContainer: {
     marginBottom: 25,
   },
 
-  objetivoTitle: {
+  displayerTitle: {
     paddingVertical: 10,
     flexDirection: 'row',
     alignItems: 'center',

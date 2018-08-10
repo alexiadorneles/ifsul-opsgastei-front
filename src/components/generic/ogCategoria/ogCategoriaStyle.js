@@ -1,3 +1,5 @@
+import COLORS from 'constants/colors'
+
 export default {
   categoriaContainer: {
     flexDirection: 'row',
@@ -6,7 +8,7 @@ export default {
   },
 
   nomeCategoria: {
-    marginLeft: 50,
     fontSize: 20,
+    color: COLORS.darkGrey,
   },
 }

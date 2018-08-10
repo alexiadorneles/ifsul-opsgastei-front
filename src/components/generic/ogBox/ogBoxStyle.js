@@ -16,7 +16,6 @@ export default {
   },
 
   boxContainer: {
-    padding: 20,
     paddingTop: 0,
     marginTop: 10,
   },
@@ -28,7 +27,6 @@ export default {
     alignItems: 'flex-end',
     alignSelf: 'stretch',
     borderTopWidth: 0,
-    height: 200,
   },
 
   boxBody: {
@@ -39,6 +37,7 @@ export default {
     borderWidth: BORDER.width,
     borderStyle: BORDER.style,
     borderTopWidth: 0,
+    paddingHorizontal: 20,
     minHeight: 200,
   },
 

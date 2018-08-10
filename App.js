@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, ScrollView } from 'react-native'
 import Categorias from 'components/pages/categorias'
+import Objetivos from 'components/pages/objetivos'
 import GastosFixos from 'components/pages/gastosFixos'
 import Estatistica from 'components/pages/estatistica'
 import Inicial from 'components/pages/inicial'
@@ -12,9 +13,10 @@ export default class App extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        {/* <OpsGasteiNavbar title="julho" /> */}
+        <OpsGasteiNavbar title="julho" />
         <ScrollView contentContainerStyle={{ flex: 1 }}>
-          <Login />
+          <Objetivos />
+          {/* <Login /> */}
           {/* <Inicial /> */}
           {/* <GastosFixos /> */}
           {/* <Estatistica /> */}
@@ -22,7 +24,7 @@ export default class App extends Component {
           {/* <AdicionarObjetivo /> */}
           {/* <Perfil usuario={usuario} salarioAtual={salarioAtual} /> */}
         </ScrollView>
-        {/* <OpsGasteiMenuBar /> */}
+        <OpsGasteiMenuBar />
       </View>
     )
   }

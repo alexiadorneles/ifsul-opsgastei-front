@@ -2,6 +2,7 @@ import COLORS from 'constants/colors'
 
 export default {
   gastosContainer: {
+    paddingTop: 10,
     marginBottom: 30,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
@@ -32,7 +33,7 @@ export default {
 
   opcoes: {
     borderRadius: 10,
-    marginTop: 30,
+    top: 40,
     padding: 8,
     backgroundColor: COLORS.borderWrapper,
     position: 'absolute',

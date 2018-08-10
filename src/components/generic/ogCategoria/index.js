@@ -19,7 +19,7 @@ class OpsGasteiCategoria extends Component {
     }
     return (
       <View style={styleContainer}>
-        <Text style={STYLES.nomeContainer}>{categoria.nome}</Text>
+        <Text style={STYLES.nomeCategoria}>{categoria.nome}</Text>
         <OpsGasteiTagCategoria
           cor={categoria.cor}
           icone={categoria.icone}
