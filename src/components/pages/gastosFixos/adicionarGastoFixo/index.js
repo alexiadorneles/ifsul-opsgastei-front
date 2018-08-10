@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { Text, ScrollView, View, TextInput, Picker } from 'react-native'
 import { TextInputMask } from 'react-native-masked-text'
-import MaskedInput from 'react-native-masked-input'
 import PropTypes from 'prop-types'
 
 import OpsGasteiButton from 'components/generic/ogButton'
-import GastoFixo from 'objects/GastoFixo'
+// import GastoFixo from 'objects/GastoFixo'
 import STYLES from './adicionarGastoFixoStyle'
 
 class AdicionarGastoFixo extends Component {
@@ -14,7 +13,7 @@ class AdicionarGastoFixo extends Component {
     callbackAdicionar: PropTypes.function,
   }
 
-  state = { showAdicionar: false, gastoFixo: { categoria: {} } }
+  state = { showAdicionar: false, gastoFixo: {} }
   constructor(props) {
     super(props)
 
@@ -31,13 +30,12 @@ class AdicionarGastoFixo extends Component {
   zerarState() {
     this.setState({
       showAdicionar: false,
-      gastoFixo: { categoria: {} },
+      gastoFixo: {},
       categorias: this.props.categorias,
     })
   }
 
   mostrarAdicionar() {
-    console.log('mostrar adicionar')
     this.setState({
       showAdicionar: true,
       categorias: this.props.categorias,
@@ -52,14 +50,13 @@ class AdicionarGastoFixo extends Component {
 
     fimData.setMonth(inicioData.getMonth() + duracaoMeses)
 
-    const gastoFixoModel = new GastoFixo({
-      ...gastoFixo,
-      inicioData,
-      fimData,
-      duracaoMeses,
-    })
+    // const gastoFixoModel = new GastoFixo({
+    //   ...gastoFixo,
+    //   inicioData,
+    //   fimData,
+    //   duracaoMeses,
+    // })
 
-    console.log(gastoFixoModel)
 
     // _gastoFixoService.criar(gastoFixoModel).then(() => {
     this.zerarState()
@@ -69,22 +66,30 @@ class AdicionarGastoFixo extends Component {
 
   }
 
-  atualizarPropriedadeGastoFixoEState(prop, value) {
+  atualizarPropriedadeGastoFixoEState(prop, value, isMoney) {
+    if (isMoney) value = this.tratarMoneyMask(value)
     const { gastoFixo } = this.state
     gastoFixo[prop] = value
     this.setState({ gastoFixo })
   }
 
+  tratarMoneyMask(value) {
+    const changedValue = value.replace('R$', '').replace('.', '').replace(',', '.')
+    return Number(changedValue)
+  }
+
 
   renderPickerItems() {
     const { categoria } = this.state.gastoFixo
-    console.log(this.state)
     const categorias = this.state.categorias
-    if (categoria) {
-      categorias.splice(categorias.indexOf(categoria), 1)
-      categorias.unshift(categoria)
+    const retorno = []
+    if (!categoria) {
+      retorno.push(<Picker.Item key={''} label={' '} value={undefined} />)
     }
-    return categorias.map(cat => <Picker.Item key={cat.nome} label={cat.nome} value={cat} />)
+
+    retorno.push(...categorias.map(cat => <Picker.Item key={cat.nome} label={cat.nome} value={cat} selectedValue={categoria && categoria.nome} />))
+    return retorno
+
   }
 
   renderAdicionarGastoFixo() {
@@ -99,17 +104,17 @@ class AdicionarGastoFixo extends Component {
           onChangeText={text => this.atualizarPropriedadeGastoFixoEState('nome', text)}
         />
 
-        <MaskedInput
+        <TextInputMask
+          value={this.state.gastoFixo.valor}
+          refInput={valor => this.valorGasto = valor}
+          type={'money'}
           style={STYLES.input}
           placeholder="Valor"
-          maskType="money"
-          currencySymbol="R$"
-          currencySeparator=","
-          onChangeText={valor => this.atualizarPropriedadeGastoFixoEState('valor', valor)}
+          onChangeText={valor => this.atualizarPropriedadeGastoFixoEState('valor', valor, true)}
         />
 
         <TextInputMask
-          ref={this.state.gastoFixo.periodo}
+          value={this.state.gastoFixo.periodo}
           placeholder="Periodo (em meses)"
           type="only-numbers"
           style={STYLES.input}

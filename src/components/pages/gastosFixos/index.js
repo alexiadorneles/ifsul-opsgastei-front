@@ -82,7 +82,6 @@ class GastosFixos extends Component {
   }
 
   render() {
-    console.log('categoriaaas', this.state.categorias)
     return (
       <ScrollView style={STYLES.pageContainer}>
         <Text style={STYLES.pageTitle}> GASTOS FIXOS </Text>
