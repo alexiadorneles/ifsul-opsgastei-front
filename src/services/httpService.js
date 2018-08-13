@@ -19,4 +19,4 @@ class HttpService {
   }
 }
 
-export default HttpService
+export { HttpService }

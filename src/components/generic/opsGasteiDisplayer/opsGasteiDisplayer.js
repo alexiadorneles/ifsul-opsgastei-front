@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
-import { MaskService } from 'react-native-masked-text'
 import PropTypes from 'prop-types'
 
-import OpsGasteiCategoria from 'components/generic/ogCategoria'
+import { OpsGasteiCategoria } from 'components/generic'
+import { TextMaskService } from 'services'
 import STYLES from './opsGasteiDisplayerStyle'
 
 const PRIVATE_PROPERTIES = ['categoria', 'valor', 'status', 'nome', 'opcoes']
@@ -21,12 +21,7 @@ class OpsGasteiDisplayer extends Component {
   }
 
   renderValor(object) {
-    const valor = MaskService.toMask('money', object.valor || 0, {
-      unit: 'R$',
-      separator: '.',
-      delimiter: ',',
-    })
-
+    const valor = TextMaskService.toMoney(object.valor)
     return <Text style={STYLES.type}>Valor: {valor} </Text>
   }
 
