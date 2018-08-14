@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Image, View, ImageBackground, TouchableOpacity } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 
 import { OpsGasteiLogo } from 'components/generic'
 import Background from 'assets/img/back.png'
@@ -31,6 +32,7 @@ class Login extends Component {
   }
 
   loginGoogle() {
+    Actions.loggedContainer()
     // const auth2 = this.GoogleInit()
     // auth2.signIn().then((response) => {
     //   if (response.Zi) {

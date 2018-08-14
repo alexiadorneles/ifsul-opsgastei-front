@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, TextInput, Picker } from 'react-native'
 import MaskedInput from 'react-native-masked-input'
+import { Actions } from 'react-native-router-flux'
 
 import { OpsGasteiButton } from 'components/generic'
 import STYLES from './adicionarObjetivoStyle'
@@ -26,6 +27,7 @@ class AdicionarObjetivo extends Component {
     const data = new Date()
     objetivo.status = 'I'
     objetivo.data = data
+    Actions.objetivos()
     // _objetivoService.criar(objetivo).then( () => {
     //   this.objetivoAdicionado(objetivo.nome)
     //   _$location.url('/objetivo')
