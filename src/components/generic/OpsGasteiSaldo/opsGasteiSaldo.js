@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 
-import Services from 'services'
-console.log('aaaa', Services)
+import { TextMaskService } from 'services'
+console.log('aaaa', TextMaskService.toMoney)
 import STYLES from './opsGasteiSaldoStyle'
 
 class OpsGasteiSaldo extends Component {
@@ -43,14 +43,14 @@ class OpsGasteiSaldo extends Component {
 
   renderSalario() {
     if (this.state.salario) {
-      return <Text style={STYLES.valorSalario}>Salário: {TextMoneyMask.toMoney(this.state.salario)}</Text>
+      return <Text style={STYLES.valorSalario}>Salário: {TextMaskService.toMoney(this.state.salario)}</Text>
     }
   }
 
   render() {
     return (
       <View style={this.state.valorSaldo < 0 ? STYLES.saldoNegativo : STYLES.saldoPositivo}>
-        <Text style={STYLES.valorSaldo}>{TextMoneyMask.toMoney(this.state.valorSaldoExibicao)}</Text>
+        <Text style={STYLES.valorSaldo}>{TextMaskService.toMoney(this.state.valorSaldoExibicao)}</Text>
         {this.renderSalario()}
       </View>
     )
