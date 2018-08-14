@@ -6,8 +6,7 @@ import GastosFixos from 'components/pages/gastosFixos'
 import Estatistica from 'components/pages/estatistica'
 import Inicial from 'components/pages/inicial'
 import Login from 'components/pages/login'
-import OpsGasteiNavbar from 'components/generic/ogNavbar'
-import OpsGasteiMenuBar from 'components/generic/ogMenubar'
+import { OpsGasteiNavbar, OpsGasteiMenubar } from 'components/generic'
 
 export default class App extends Component {
   render() {
@@ -24,7 +23,7 @@ export default class App extends Component {
           {/* <AdicionarObjetivo /> */}
           {/* <Perfil usuario={usuario} salarioAtual={salarioAtual} /> */}
         </ScrollView>
-        <OpsGasteiMenuBar />
+        <OpsGasteiMenubar />
       </View>
     )
   }
