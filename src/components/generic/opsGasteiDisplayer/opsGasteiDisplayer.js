@@ -11,7 +11,7 @@ const PRIVATE_PROPERTIES = ['categoria', 'valor', 'status', 'nome', 'opcoes']
 class OpsGasteiDisplayer extends Component {
   static propTypes = {
     object: PropTypes.object,
-    children: PropTypes.Component,
+    children: PropTypes.any,
   }
 
   renderProps(object) {

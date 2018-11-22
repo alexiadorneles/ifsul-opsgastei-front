@@ -9,7 +9,7 @@ const LOCAL_STATE = {}
 class OpsGasteiBox extends Component {
   state = { showBody: true }
   static propTypes = {
-    children: PropTypes.Component,
+    children: PropTypes.any,
     title: PropTypes.string,
   }
 
