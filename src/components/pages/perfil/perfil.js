@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native'
 import PropTypes from 'prop-types'
 
+import { SecuredContainer } from 'components/generic'
 import Background from 'assets/img/header.png'
 import STYLES from './perfilStyle'
 
@@ -17,11 +18,11 @@ class Perfil extends Component {
     lastListItemStyle.borderBottomWidth = 0
 
     return (
-      <View style={STYLES.container}>
+      <SecuredContainer style={STYLES.container}>
         <ImageBackground style={STYLES.headerProfile} source={Background}>
-          <Image style={STYLES.picture} source={usuario.picture} />
-          <Text style={STYLES.nome}> {usuario.nome} </Text>
-          <Text style={STYLES.cash}> {salarioAtual.valor} </Text>
+          <Image style={STYLES.picture} source={usuario && usuario.picture} />
+          <Text style={STYLES.nome}> {usuario && usuario.nome} </Text>
+          <Text style={STYLES.cash}> {salarioAtual && salarioAtual.valor} </Text>
         </ImageBackground>
 
         <View style={STYLES.list}>
@@ -38,9 +39,9 @@ class Perfil extends Component {
             <Text style={lastListItemStyle}> Sair </Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </SecuredContainer>
     )
   }
 }
 
-export default Perfil
+export { Perfil }

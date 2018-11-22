@@ -1,2 +1,1 @@
-import AdicionarObjetivo from './adicionarObjetivo'
-export default AdicionarObjetivo
+export * from './adicionarObjetivo'

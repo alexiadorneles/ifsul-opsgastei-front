@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, ScrollView } from 'react-native'
+import { View } from 'react-native'
 
 import {
   OpsGasteiObjetivoIncompleto,
@@ -9,6 +9,7 @@ import {
   OpsGasteiBox,
   OpsGasteiButton,
   OpsGasteiTotalizador,
+  SecuredContainer,
 } from 'components/generic'
 import STATUS from 'constants/objetivoStatus'
 import STYLES from './objetivosStyle'
@@ -176,7 +177,8 @@ class Objetivos extends Component {
 
   render() {
     return (
-      <ScrollView style={STYLES.container} >
+      <SecuredContainer>
+        {/* <ScrollView style={STYLES.container} > */}
         <OpsGasteiSaldo />
         <View style={STYLES.objetivosContainer}>
           <OpsGasteiBox title="Objetivos Incompletos">
@@ -201,9 +203,10 @@ class Objetivos extends Component {
           </OpsGasteiBox>
 
         </View>
-      </ScrollView>
+        {/* </ScrollView> */}
+      </SecuredContainer>
     )
   }
 }
 
-export default Objetivos
+export { Objetivos }

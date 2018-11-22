@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { Text } from 'react-native'
 
-import { OpsGasteiCategoria } from 'components/generic'
+import { OpsGasteiCategoria, SecuredContainer } from 'components/generic'
 import AdicionarCategoria from './adicionarCategoria'
 import STYLES from './categoriasStyle'
 
@@ -30,14 +30,14 @@ class Categorias extends Component {
 
   render() {
     return (
-      <View style={STYLES.pageContainer}>
+      <SecuredContainer style={STYLES.pageContainer}>
         <Text style={STYLES.pageTitle}> CATEGORIAS </Text>
         {this.renderCategorias()}
 
         <AdicionarCategoria callbackAdicionar={this.adicionar} />
-      </View>
+      </SecuredContainer>
     )
   }
 }
 
-export default Categorias
+export { Categorias }

@@ -32,7 +32,7 @@ class Login extends Component {
   }
 
   loginGoogle() {
-    Actions.loggedContainer()
+    Actions.objetivos()
     // const auth2 = this.GoogleInit()
     // auth2.signIn().then((response) => {
     //   if (response.Zi) {
@@ -74,4 +74,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export { Login }
