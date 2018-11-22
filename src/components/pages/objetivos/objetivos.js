@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 
 import {
   OpsGasteiObjetivoIncompleto,
@@ -157,7 +158,7 @@ class Objetivos extends Component {
   }
 
   goToAddObjetivo() {
-    // _$location.path('/objetivo/adicionar-objetivo')
+    Actions.adicionarObjetivo()
   }
 
   renderObjetivosIncompletos() {
@@ -178,7 +179,6 @@ class Objetivos extends Component {
   render() {
     return (
       <SecuredContainer>
-        {/* <ScrollView style={STYLES.container} > */}
         <OpsGasteiSaldo />
         <View style={STYLES.objetivosContainer}>
           <OpsGasteiBox title="Objetivos Incompletos">
@@ -203,7 +203,6 @@ class Objetivos extends Component {
           </OpsGasteiBox>
 
         </View>
-        {/* </ScrollView> */}
       </SecuredContainer>
     )
   }

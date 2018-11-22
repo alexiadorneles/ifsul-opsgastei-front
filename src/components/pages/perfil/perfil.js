@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View, Image, TouchableOpacity, ImageBackground } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 import PropTypes from 'prop-types'
 
 import { SecuredContainer } from 'components/generic'
@@ -10,6 +11,10 @@ class Perfil extends Component {
   static propTypes = {
     usuario: PropTypes.object,
     salarioAtual: PropTypes.object,
+  }
+
+  goToCategorias() {
+    Actions.categorias()
   }
 
   render() {
