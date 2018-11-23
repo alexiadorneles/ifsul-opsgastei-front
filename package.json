@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "eject": "node node_modules/react-native/local-cli/cli.js eject",
     "android": "react-native run-android",
     "test": "jest"
   },
@@ -16,9 +17,11 @@
     "prop-types": "^15.6.2",
     "react": "16.4.1",
     "react-native": "^0.55.4",
+    "react-native-app-auth": "^1.0.1",
     "react-native-color-picker": "^0.4.0",
     "react-native-color-wheel": "^0.1.5",
     "react-native-fontawesome": "^5.7.0",
+    "react-native-google-signin": "^1.0.1",
     "react-native-masked-input": "^1.0.3",
     "react-native-masked-text": "^1.7.2",
     "react-native-oauth": "^2.1.18",
