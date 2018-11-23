@@ -6,6 +6,7 @@ import { OpsGasteiLogo } from 'components/generic'
 import Background from 'assets/img/back.png'
 import GoogleIcon from 'assets/img/google-icon.png'
 import STYLES from './loginStyle'
+import { OBJETIVOS } from 'constants/routerKeys'
 
 class Login extends Component {
   constructor() {
@@ -32,7 +33,7 @@ class Login extends Component {
   }
 
   loginGoogle() {
-    Actions.objetivos()
+    Actions[OBJETIVOS]()
     // const auth2 = this.GoogleInit()
     // auth2.signIn().then((response) => {
     //   if (response.Zi) {

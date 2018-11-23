@@ -4,6 +4,7 @@ import { Actions } from 'react-native-router-flux'
 
 import MenuItem from 'objects/MenuItem'
 import { OpsGasteiMenuItem } from 'components/generic'
+import { OBJETIVOS, ESTATISTICA, GASTOS_FIXOS, PERFIL } from 'constants/routerKeys'
 import STYLES from './opsGasteiMenubarStyle'
 
 class OpsGasteiMenubar extends Component {
@@ -43,7 +44,7 @@ class OpsGasteiMenubar extends Component {
 
   goHome() {
     this.changeMenuItemAtivo('home')
-    Actions.objetivos()
+    Actions[OBJETIVOS]()
   }
 
   buscarMes() {
@@ -52,17 +53,17 @@ class OpsGasteiMenubar extends Component {
 
   goToEstatisticas() {
     this.changeMenuItemAtivo('pieChart')
-    Actions.estatistica()
+    Actions[ESTATISTICA]()
   }
 
   goToGastoFixos() {
     this.changeMenuItemAtivo('usd')
-    Actions.gastosFixos()
+    Actions[GASTOS_FIXOS]()
   }
 
   goToPerfil() {
     this.changeMenuItemAtivo('user')
-    Actions.perfil()
+    Actions[PERFIL]()
   }
 
   changeMenuItemAtivo(icone) {

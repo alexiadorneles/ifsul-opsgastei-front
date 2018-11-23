@@ -3,6 +3,7 @@ import { View, ScrollView } from 'react-native'
 import { Router, Scene } from 'react-native-router-flux'
 
 import { Objetivos, Categorias, AdicionarObjetivo, Estatistica, GastosFixos, Perfil, Login } from 'components/pages'
+import { LOGIN, OBJETIVOS, CATEGORIAS, ADICIONAR_OBJETIVO, ESTATISTICA, GASTOS_FIXOS, PERFIL } from 'constants/routerKeys'
 
 export default class App extends Component {
   render() {
@@ -11,38 +12,38 @@ export default class App extends Component {
         <ScrollView contentContainerStyle={{ flex: 1 }}>
           <Router>
             <Scene key="root" style={{ flex: 1 }}>
-              <Scene key="login"
+              <Scene key={LOGIN}
                 component={Login}
                 hideNavBar={true}
                 initial
               />
               <Scene
-                key="objetivos"
+                key={OBJETIVOS}
                 component={Objetivos}
                 hideNavBar={true}
               />
               <Scene
-                key="categorias"
+                key={CATEGORIAS}
                 component={Categorias}
                 hideNavBar={true}
               />
               <Scene
-                key="adicionarObjetivo"
+                key={ADICIONAR_OBJETIVO}
                 component={AdicionarObjetivo}
                 hideNavBar={true}
               />
               <Scene
-                key="estatistica"
+                key={ESTATISTICA}
                 component={Estatistica}
                 hideNavBar={true}
               />
               <Scene
-                key="gastosFixos"
+                key={GASTOS_FIXOS}
                 component={GastosFixos}
                 hideNavBar={true}
               />
               <Scene
-                key="perfil"
+                key={PERFIL}
                 component={Perfil}
                 hideNavBar={true}
               />

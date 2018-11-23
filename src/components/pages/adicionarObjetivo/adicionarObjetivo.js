@@ -5,6 +5,7 @@ import { Actions } from 'react-native-router-flux'
 
 import { OpsGasteiButton, SecuredContainer } from 'components/generic'
 import STYLES from './adicionarObjetivoStyle'
+import { OBJETIVOS } from 'constants/routerKeys'
 
 class AdicionarObjetivo extends Component {
   state = { objetivo: {} }
@@ -27,7 +28,7 @@ class AdicionarObjetivo extends Component {
     const data = new Date()
     objetivo.status = 'I'
     objetivo.data = data
-    Actions.objetivos()
+    Actions[OBJETIVOS]()
     // _objetivoService.criar(objetivo).then( () => {
     //   this.objetivoAdicionado(objetivo.nome)
     //   _$location.url('/objetivo')

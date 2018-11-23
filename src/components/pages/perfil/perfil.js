@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import { SecuredContainer } from 'components/generic'
 import Background from 'assets/img/header.png'
 import STYLES from './perfilStyle'
+import { CATEGORIAS } from 'constants/routerKeys'
 
 class Perfil extends Component {
   static propTypes = {
@@ -14,7 +15,7 @@ class Perfil extends Component {
   }
 
   goToCategorias() {
-    Actions.categorias()
+    Actions[CATEGORIAS]()
   }
 
   render() {

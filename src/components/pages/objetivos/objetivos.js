@@ -14,6 +14,7 @@ import {
 } from 'components/generic'
 import STATUS from 'constants/objetivoStatus'
 import STYLES from './objetivosStyle'
+import { ADICIONAR_OBJETIVO } from 'constants/routerKeys'
 
 class Objetivos extends Component {
   state = { objetivosCompletos: [], objetivosIncompletos: [], gastosFixos: [] }
@@ -158,7 +159,7 @@ class Objetivos extends Component {
   }
 
   goToAddObjetivo() {
-    Actions.adicionarObjetivo()
+    Actions[ADICIONAR_OBJETIVO]()
   }
 
   renderObjetivosIncompletos() {
