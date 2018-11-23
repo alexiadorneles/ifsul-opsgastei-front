@@ -1,22 +1,55 @@
 import axios from 'axios'
-import URL_BASE from '../constants/baseUrl'
+import { AsyncStorage } from 'react-native'
+
+import URL_BASE from 'constants/baseUrl'
+
+const CONTENT_TYPE = { 'Content-Type': 'application/json' }
+const _config = {
+  headers: {
+    ...CONTENT_TYPE,
+  },
+}
 
 class HttpService {
-  get(url) {
-    return axios.get(`${URL_BASE}/${url}`)
+  async get(url, config) {
+    config = config || await this.getConfig()
+    const response = await axios.get(`${URL_BASE}/${url}`, config)
+    return response.data
   }
 
-  post(url, prop) {
-    return axios.post(`${URL_BASE}/${url}`, prop)
+  async post(url, prop, config) {
+    config = config || await this.getConfig()
+    const response = await axios.post(`${URL_BASE}/${url}`, prop, config)
+    return response.data
   }
 
-  put(url, prop) {
-    return axios.put(url, prop)
+  async put(url, prop, config) {
+    config = config || await this.getConfig()
+    const response = await axios.put(url, prop, config)
+    return response.data
   }
 
-  deletar(url) {
-    return axios.delete(`${URL_BASE}/${url}`)
+  async deletar(url, config) {
+    config = config || await this.getConfig()
+    const response = await axios.delete(`${URL_BASE}/${url}`, config)
+    return response.data
   }
+
+
+  setHeader(header = {}) {
+    _config.headers = { ...CONTENT_TYPE, ...header }
+  }
+
+  async getConfig() {
+    if (!_config.headers.authorization) {
+      this.setHeader({
+        authorization: await AsyncStorage.getItem('hedaderAuth'),
+      })
+    }
+
+    return _config
+  }
+
 }
 
 export { HttpService }

@@ -4,8 +4,9 @@ import MaskedInput from 'react-native-masked-input'
 import { Actions } from 'react-native-router-flux'
 
 import { OpsGasteiButton, SecuredContainer } from 'components/generic'
-import STYLES from './adicionarObjetivoStyle'
 import { OBJETIVOS } from 'constants/routerKeys'
+import { objetivoService, categoriaService } from 'services'
+import STYLES from './adicionarObjetivoStyle'
 
 class AdicionarObjetivo extends Component {
   state = { objetivo: {} }
@@ -24,20 +25,16 @@ class AdicionarObjetivo extends Component {
     // _swalService.success(`'${nomeObjetivo}' adicionado com sucesso.`)
   }
 
-  adicionar(objetivo) {
+  async adicionar(objetivo) {
     const data = new Date()
     objetivo.status = 'I'
     objetivo.data = data
+    await objetivoService.criar(objetivo)
     Actions[OBJETIVOS]()
-    // _objetivoService.criar(objetivo).then( () => {
-    //   this.objetivoAdicionado(objetivo.nome)
-    //   _$location.url('/objetivo')
-    // })
   }
 
-  buscarCategorias() {
-    // _categoriaService.buscarPorUsuario().then(res => this.categorias = res.data)
-    return [{ nome: 'Comida' }, { nome: 'Vestuário' }, { nome: 'Alimentação' }, { nome: 'Transporte' }]
+  async buscarCategorias() {
+    return await categoriaService.buscarPorUsuario()
   }
 
   atualizarPropriedadeObjetivoEState(prop, value) {

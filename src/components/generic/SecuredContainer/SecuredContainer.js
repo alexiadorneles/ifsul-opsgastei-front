@@ -2,6 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ScrollView } from 'react-native'
 import { OpsGasteiMenubar, OpsGasteiNavbar } from 'components/generic'
+let _icone
+
+const onChange = (icone) => {
+  _icone = icone
+}
 
 const SecuredContainer = ({ children }) => {
   return (
@@ -10,7 +15,7 @@ const SecuredContainer = ({ children }) => {
         <OpsGasteiNavbar title="Novembro" />
         {children}
       </ScrollView>
-      <OpsGasteiMenubar />
+      <OpsGasteiMenubar onChange={onChange} active={_icone} />
     </ScrollView>
   )
 }

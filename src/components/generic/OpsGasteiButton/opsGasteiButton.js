@@ -10,7 +10,7 @@ class OpsGasteiButton extends Component {
     onClick: PropTypes.any,
     label: PropTypes.string,
     model: PropTypes.any,
-    if: PropTypes.function,
+    if: PropTypes.any,
   }
 
   constructor() {
