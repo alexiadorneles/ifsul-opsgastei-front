@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Text, ScrollView } from 'react-native'
+import { Text } from 'react-native'
 
-import { OpsGasteiGastoFixo } from 'components/generic'
+import { OpsGasteiGastoFixo, SecuredContainer } from 'components/generic'
 import AdicionarGastoFixo from './adicionarGastoFixo'
 import STYLES from './gastosFixosStyle'
 
@@ -83,14 +83,14 @@ class GastosFixos extends Component {
 
   render() {
     return (
-      <ScrollView style={STYLES.pageContainer}>
+      <SecuredContainer style={STYLES.pageContainer}>
         <Text style={STYLES.pageTitle}> GASTOS FIXOS </Text>
         {this.renderGastos()}
 
         <AdicionarGastoFixo categorias={this.state.categorias} callbackAdicionar={this.buscarGastosFixos} />
-      </ScrollView>
+      </SecuredContainer>
     )
   }
 }
 
-export default GastosFixos
+export { GastosFixos }

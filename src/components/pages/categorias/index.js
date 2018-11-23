@@ -1,2 +1,1 @@
-import Categorias from './categorias'
-export default Categorias
+export * from './categorias'

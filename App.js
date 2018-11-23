@@ -1,29 +1,55 @@
 import React, { Component } from 'react'
 import { View, ScrollView } from 'react-native'
-import Categorias from 'components/pages/categorias'
-import Objetivos from 'components/pages/objetivos'
-import GastosFixos from 'components/pages/gastosFixos'
-import Estatistica from 'components/pages/estatistica'
-import Inicial from 'components/pages/inicial'
-import Login from 'components/pages/login'
-import { OpsGasteiNavbar, OpsGasteiMenubar } from 'components/generic'
+import { Router, Scene } from 'react-native-router-flux'
+
+import { Objetivos, Categorias, AdicionarObjetivo, Estatistica, GastosFixos, Perfil, Login } from 'components/pages'
+import { LOGIN, OBJETIVOS, CATEGORIAS, ADICIONAR_OBJETIVO, ESTATISTICA, GASTOS_FIXOS, PERFIL } from 'constants/routerKeys'
 
 export default class App extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <OpsGasteiNavbar title="julho" />
         <ScrollView contentContainerStyle={{ flex: 1 }}>
-          <Objetivos />
-          {/* <Login /> */}
-          {/* <Inicial /> */}
-          {/* <GastosFixos /> */}
-          {/* <Estatistica /> */}
-          {/* <Categorias /> */}
-          {/* <AdicionarObjetivo /> */}
-          {/* <Perfil usuario={usuario} salarioAtual={salarioAtual} /> */}
+          <Router>
+            <Scene key="root" style={{ flex: 1 }}>
+              <Scene key={LOGIN}
+                component={Login}
+                hideNavBar={true}
+                initial
+              />
+              <Scene
+                key={OBJETIVOS}
+                component={Objetivos}
+                hideNavBar={true}
+              />
+              <Scene
+                key={CATEGORIAS}
+                component={Categorias}
+                hideNavBar={true}
+              />
+              <Scene
+                key={ADICIONAR_OBJETIVO}
+                component={AdicionarObjetivo}
+                hideNavBar={true}
+              />
+              <Scene
+                key={ESTATISTICA}
+                component={Estatistica}
+                hideNavBar={true}
+              />
+              <Scene
+                key={GASTOS_FIXOS}
+                component={GastosFixos}
+                hideNavBar={true}
+              />
+              <Scene
+                key={PERFIL}
+                component={Perfil}
+                hideNavBar={true}
+              />
+            </Scene>
+          </Router>
         </ScrollView>
-        <OpsGasteiMenubar />
       </View>
     )
   }

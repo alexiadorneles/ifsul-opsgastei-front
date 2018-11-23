@@ -8,5 +8,6 @@ export default {
     justifyContent: 'space-around',
     backgroundColor: COLORS.text,
     height: 50,
+    marginTop: 15,
   },
 }

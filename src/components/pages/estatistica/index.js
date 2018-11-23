@@ -1,2 +1,1 @@
-import Estatistica from './estatistica'
-export default Estatistica
+export * from './estatistica'

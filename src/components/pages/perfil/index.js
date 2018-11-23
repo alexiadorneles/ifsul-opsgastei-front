@@ -1,2 +1,1 @@
-import Perfil from './perfil'
-export default Perfil
+export * from './perfil'
