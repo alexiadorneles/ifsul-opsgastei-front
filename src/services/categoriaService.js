@@ -2,10 +2,6 @@ import { httpService } from 'services'
 const url = 'categorias'
 
 class CategoriaService {
-  constructor($http) {
-    httpService = $http
-  }
-
   criar(categoria) {
     return httpService.post(url, categoria)
   }

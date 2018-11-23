@@ -1,27 +1,19 @@
-import angular from 'angular'
-import URL_BASE from '../constants/baseUrl'
-
-let _$http
-const url = `${URL_BASE}/usuarios`
+import { httpService } from 'services'
+const url = '/usuarios'
 
 class UsuarioService {
-  constructor($http) {
-    _$http = $http
-  }
-
   criar(usuario) {
-    return _$http.post(url, usuario)
+    return httpService.post(url, usuario)
   }
 
   pegarSaldo() {
-    return _$http.get(`${url}/saldo-atual`)
+    return httpService.get(`${url}/saldo-atual`)
   }
 
   pegarSaldoPorData(periodo) {
-    return _$http.get(`${url}/saldo/${periodo.ano}/${periodo.mes}`)
+    return httpService.get(`${url}/saldo/${periodo.ano}/${periodo.mes}`)
   }
 }
 
-export default angular.module('services.usuarioService', [])
-  .service('usuarioService', UsuarioService)
-  .name
+const usuarioService = new UsuarioService
+export { usuarioService }

@@ -65,11 +65,11 @@ class OpsGasteiMenubar extends Component {
     const menuAtivo = menuItems.find(mi => !!mi.isAtivo)
     if (menuAtivo) menuAtivo.isAtivo = false
     menuItems.find(mi => mi.icone === icone).isAtivo = true
-    this.setState({ menuItems: this.menuItems })
+    this.setState({ menuItems })
   }
 
   initOptions() {
-    this.menuItems = [
+    const menuItems = [
       new MenuItem({
         icone: 'home',
         isAtivo: true,
@@ -102,7 +102,7 @@ class OpsGasteiMenubar extends Component {
       }),
     ]
 
-    this.setState({ menuItems: this.menuItems })
+    this.setState({ menuItems })
   }
 
   renderMenuItem() {

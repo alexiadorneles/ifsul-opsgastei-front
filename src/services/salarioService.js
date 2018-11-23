@@ -1,4 +1,4 @@
-import { httpService } from './services'
+import { httpService } from 'services'
 const url = 'salarios'
 
 class SalarioService {
