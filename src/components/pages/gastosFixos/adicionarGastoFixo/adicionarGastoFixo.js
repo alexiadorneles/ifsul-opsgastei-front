@@ -9,7 +9,7 @@ import STYLES from './adicionarGastoFixoStyle'
 class AdicionarGastoFixo extends Component {
   static propTypes = {
     categorias: PropTypes.array,
-    callbackAdicionar: PropTypes.function,
+    callbackAdicionar: PropTypes.any,
   }
 
   state = { showAdicionar: false, gastoFixo: {} }

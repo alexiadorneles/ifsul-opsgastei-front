@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
+import PropTypes from 'prop-types'
 import { Actions } from 'react-native-router-flux'
 
 import MenuItem from 'objects/MenuItem'
@@ -8,6 +9,7 @@ import { OBJETIVOS, ESTATISTICA, GASTOS_FIXOS, PERFIL } from 'constants/routerKe
 import STYLES from './opsGasteiMenubarStyle'
 
 class OpsGasteiMenubar extends Component {
+  static propTypes = { onChange: PropTypes.any, active: PropTypes.string }
   state = { menuItems: [] }
   constructor() {
     super()
@@ -67,18 +69,17 @@ class OpsGasteiMenubar extends Component {
   }
 
   changeMenuItemAtivo(icone) {
+    this.props.onChange(icone)
     const { menuItems } = this.state
-    const menuAtivo = menuItems.find(mi => !!mi.isAtivo)
-    if (menuAtivo) menuAtivo.isAtivo = false
-    menuItems.find(mi => mi.icone === icone).isAtivo = true
-    this.setState({ menuItems: this.menuItems })
+    menuItems.forEach(mi => mi.isAtivo = mi.icone === icone)
+    this.setState({ menuItems })
   }
 
   initOptions() {
-    this.menuItems = [
+    const menuItems = [
       new MenuItem({
         icone: 'home',
-        isAtivo: true,
+        isAtivo: false,
         title: 'Inicial',
         onClick: this.goHome,
       }),
@@ -108,7 +109,7 @@ class OpsGasteiMenubar extends Component {
       }),
     ]
 
-    this.setState({ menuItems: this.menuItems })
+    this.setState({ menuItems }, () => this.changeMenuItemAtivo(this.props.active || 'home'))
   }
 
   renderMenuItem() {

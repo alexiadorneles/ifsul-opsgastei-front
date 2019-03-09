@@ -8,7 +8,7 @@ import STYLES from './opsGasteiObjetivoIncompletoStyle'
 class OpsGasteiObjetivoIncompleto extends Component {
   static propTypes = {
     objetivo: PropTypes.object,
-    callbackAcao: PropTypes.function,
+    callbackAcao: PropTypes.any,
   }
 
   state = {

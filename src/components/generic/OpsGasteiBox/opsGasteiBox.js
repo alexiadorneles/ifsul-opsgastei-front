@@ -4,12 +4,10 @@ import PropTypes from 'prop-types'
 
 import STYLES from './opsGasteiBoxStyle'
 
-const LOCAL_STATE = {}
-
 class OpsGasteiBox extends Component {
   state = { showBody: true }
   static propTypes = {
-    children: PropTypes.Component,
+    children: PropTypes.any,
     title: PropTypes.string,
   }
 
@@ -20,16 +18,21 @@ class OpsGasteiBox extends Component {
   }
 
   toggle() {
-    LOCAL_STATE.showBody = !this.state.showBody
-    this.setState(LOCAL_STATE)
+    this.setState({ showBody: !this.state.showBody })
   }
 
   renderChildren() {
     if (this.state.showBody) {
-      return <View style={STYLES.boxBody}>
-        {this.props.children}
-      </View>
+      return (
+        <View style={STYLES.boxBodyContainer}>
+          <View style={STYLES.boxBody}>
+            {this.props.children}
+          </View>
+        </View>
+      )
     }
+
+    return null
   }
 
   render() {
@@ -42,9 +45,8 @@ class OpsGasteiBox extends Component {
             </TouchableNativeFeedback>
           </View>
 
-          <View style={STYLES.boxBodyContainer}>
-            {this.renderChildren()}
-          </View>
+          {this.renderChildren()}
+
         </View>
       </View>
     )

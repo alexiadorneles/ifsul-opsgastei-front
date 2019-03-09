@@ -9,7 +9,7 @@ import STYLES from './opsGasteiObjetivoCompletoStyle'
 class OpsGasteiObjetivoCompleto extends Component {
   static propTypes = {
     objetivo: PropTypes.object,
-    callbackAcao: PropTypes.function,
+    callbackAcao: PropTypes.any,
   }
 
   constructor() {

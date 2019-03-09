@@ -12,7 +12,6 @@ export default {
     flexDirection: 'column',
     alignItems: 'center',
     position: 'relative',
-    minHeight: 250,
   },
 
   boxContainer: {

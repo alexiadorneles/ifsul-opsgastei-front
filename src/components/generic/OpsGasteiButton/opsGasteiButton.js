@@ -7,10 +7,10 @@ import STYLES from './opsGasteiButtonStyle'
 class OpsGasteiButton extends Component {
   static propTypes = {
     width: PropTypes.number,
-    onClick: PropTypes.function,
+    onClick: PropTypes.any,
     label: PropTypes.string,
-    model: PropTypes.object,
-    if: PropTypes.boolean || PropTypes.function,
+    model: PropTypes.any,
+    if: PropTypes.any,
   }
 
   constructor() {

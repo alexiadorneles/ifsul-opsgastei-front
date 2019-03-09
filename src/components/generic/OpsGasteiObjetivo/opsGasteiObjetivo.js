@@ -6,7 +6,7 @@ import { OpsGasteiDisplayer } from 'components/generic'
 class OpsGasteiObjetivo extends Component {
   static propTypes = {
     objetivo: PropTypes.object,
-    children: PropTypes.Component,
+    children: PropTypes.any,
   }
 
   render() {
