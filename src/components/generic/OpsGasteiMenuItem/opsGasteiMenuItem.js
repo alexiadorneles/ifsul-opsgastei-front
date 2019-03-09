@@ -12,8 +12,6 @@ class OpsGasteiMenuItem extends Component {
 
   render() {
     const { menuItem } = this.props
-    console.log(menuItem)
-
     return (
       <TouchableOpacity
         style={menuItem.isAtivo ? STYLES.containerAtivo : STYLES.container}
