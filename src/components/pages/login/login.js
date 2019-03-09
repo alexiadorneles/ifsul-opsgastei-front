@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Image, View, ImageBackground, TouchableOpacity } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 
 import { OpsGasteiLogo } from 'components/generic'
 import Background from 'assets/img/back.png'
 import GoogleIcon from 'assets/img/google-icon.png'
 import STYLES from './loginStyle'
+import { OBJETIVOS } from 'constants/routerKeys'
 
 class Login extends Component {
   constructor() {
@@ -31,6 +33,7 @@ class Login extends Component {
   }
 
   loginGoogle() {
+    Actions[OBJETIVOS]()
     // const auth2 = this.GoogleInit()
     // auth2.signIn().then((response) => {
     //   if (response.Zi) {
@@ -72,4 +75,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export { Login }

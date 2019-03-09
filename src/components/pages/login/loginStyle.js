@@ -14,7 +14,7 @@ export default {
   },
 
   googleIcon: {
-    width: 200,
-    height: 100,
+    width: 300,
+    height: 55,
   },
 }

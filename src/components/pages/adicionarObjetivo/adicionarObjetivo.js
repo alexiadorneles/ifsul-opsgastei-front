@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { Text, View, TextInput, Picker } from 'react-native'
 import MaskedInput from 'react-native-masked-input'
+import { Actions } from 'react-native-router-flux'
 
-import { OpsGasteiButton } from 'components/generic'
+import { OpsGasteiButton, SecuredContainer } from 'components/generic'
 import STYLES from './adicionarObjetivoStyle'
+import { OBJETIVOS } from 'constants/routerKeys'
 
 class AdicionarObjetivo extends Component {
   state = { objetivo: {} }
@@ -26,6 +28,7 @@ class AdicionarObjetivo extends Component {
     const data = new Date()
     objetivo.status = 'I'
     objetivo.data = data
+    Actions[OBJETIVOS]()
     // _objetivoService.criar(objetivo).then( () => {
     //   this.objetivoAdicionado(objetivo.nome)
     //   _$location.url('/objetivo')
@@ -55,7 +58,7 @@ class AdicionarObjetivo extends Component {
 
   render() {
     return (
-      <View style={STYLES.pageContainer}>
+      <SecuredContainer style={STYLES.pageContainer}>
         <View style={STYLES.adicionarObjetivoContainer}>
           <Text style={STYLES.pageTitle}> NOVO OBJETIVO </Text>
           <TextInput
@@ -88,9 +91,9 @@ class AdicionarObjetivo extends Component {
             onClick={this.adicionar}
           />
         </View>
-      </View>
+      </SecuredContainer>
     )
   }
 }
 
-export default AdicionarObjetivo
+export { AdicionarObjetivo }

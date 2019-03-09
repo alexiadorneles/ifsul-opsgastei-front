@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Text, View, ScrollView } from 'react-native'
+import { Text, View } from 'react-native'
 import _ from 'lodash'
 
-import { OpsGasteiGrafico, OpsGasteiLegendaGrafico } from 'components/generic'
+import { OpsGasteiGrafico, OpsGasteiLegendaGrafico, SecuredContainer } from 'components/generic'
 import STATUS from 'constants/objetivoStatus'
 import STYLES from './estatisticaStyle'
 
@@ -120,7 +120,7 @@ class Estatistica extends Component {
 
   render() {
     return (
-      <ScrollView style={STYLES.pageContainer}>
+      <SecuredContainer style={STYLES.pageContainer}>
         <Text style={STYLES.pageTitle}> ESTATÍSTICAS </Text>
         <View style={STYLES.graficoContainer}>
           <OpsGasteiGrafico title="Objetivos Completos" series={this.seriesObjetivos} colors={this.colorsObjetivos} />
@@ -129,9 +129,9 @@ class Estatistica extends Component {
           <OpsGasteiGrafico title="Gastos Fixos" series={this.seriesGastos} colors={this.colorsGastos} />
         </View>
         <OpsGasteiLegendaGrafico categorias={this.categorias} />
-      </ScrollView>
+      </SecuredContainer>
     )
   }
 }
 
-export default Estatistica
+export { Estatistica }

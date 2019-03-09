@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, ScrollView, View, TextInput, Picker } from 'react-native'
+import { Text, View, TextInput, Picker } from 'react-native'
 import { TextInputMask } from 'react-native-masked-text'
 import PropTypes from 'prop-types'
 
@@ -136,7 +136,7 @@ class AdicionarGastoFixo extends Component {
 
   render() {
     return (
-      <ScrollView style={STYLES.container}>
+      <View style={STYLES.container}>
         {this.renderAdicionarGastoFixo()}
 
         <View style={STYLES.buttonContainer}>
@@ -144,7 +144,7 @@ class AdicionarGastoFixo extends Component {
           <OpsGasteiButton label="Adicionar Gasto Fixo" if={this.state.showAdicionar} onClick={this.adicionar} model={this.state.gastoFixo} />
         </View>
 
-      </ScrollView>
+      </View>
     )
   }
 }

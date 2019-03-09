@@ -4,6 +4,7 @@ export default {
   appNavbar: {
     flexDirection: 'row',
     marginBottom: 0,
+    flex: 2,
   },
 
   appNavbarContainer: {
