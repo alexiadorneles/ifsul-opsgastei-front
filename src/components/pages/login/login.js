@@ -2,14 +2,11 @@ import React, { Component } from 'react'
 import { Image, View, ImageBackground, TouchableOpacity } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import { AsyncStorage } from 'react-native'
-// import OAuthManager from 'react-native-oauth'
-
 import { OpsGasteiLogo } from 'components/generic'
 import Background from 'assets/img/back.png'
 import GoogleIcon from 'assets/img/google-icon.png'
 import STYLES from './loginStyle'
 import { OBJETIVOS, INICIAL } from 'constants/routerKeys'
-// import { usuarioService } from 'services'
 
 class Login extends Component {
   constructor() {
@@ -24,7 +21,6 @@ class Login extends Component {
   }
 
   async componentDidMount() {
-
     // this.loadGoogleApi()
     // const manager = new OAuthManager('ops')
     // await manager.configure({
@@ -96,7 +92,6 @@ class Login extends Component {
       <ImageBackground style={STYLES.loginContainer} source={Background}>
         <View style={STYLES.login}>
           <OpsGasteiLogo />
-          {/* <TouchableOpacity style={STYLES.botaoLogin} onPress={this.loginGoogle}> */}
           <TouchableOpacity style={STYLES.botaoLogin} onPress={() => { }}>
             <Image style={STYLES.googleIcon} source={GoogleIcon} />
           </TouchableOpacity>
