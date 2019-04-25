@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "898821703398",
-    "firebase_url": "https://ops-gastei-174823.firebaseio.com",
-    "project_id": "ops-gastei-174823",
-    "storage_bucket": "ops-gastei-174823.appspot.com"
+    "project_number": "737716793798",
+    "firebase_url": "https://opsgastei-a4e2b.firebaseio.com",
+    "project_id": "opsgastei-a4e2b",
+    "storage_bucket": "opsgastei-a4e2b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:898821703398:android:938c1a3321527ef9",
+        "mobilesdk_app_id": "1:737716793798:android:a8cbb81a8b1a9052",
         "android_client_info": {
-          "package_name": "ifsul.dev.opsgastei"
+          "package_name": "com.opsgastei"
         }
       },
       "oauth_client": [
         {
-          "client_id": "898821703398-f9i4c9631fd2ftq8m8d7h1i1ndc71drb.apps.googleusercontent.com",
+          "client_id": "737716793798-letmfedsh49o103reerdprijtm2q9n4m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.opsgastei",
+            "certificate_hash": "c6a8b09695a2a0394c8572c4f0df3197780851c3"
+          }
+        },
+        {
+          "client_id": "737716793798-hbgfjj3unt8oralqj5sscuqabt4g4uoa.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCSs2qJt0toGZB2jJu4q3pqjxPhztr-m_E"
+          "current_key": "AIzaSyAo2fsVRo8SKdoRYk7hW-qF_zkXPHdD9VM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "898821703398-f9i4c9631fd2ftq8m8d7h1i1ndc71drb.apps.googleusercontent.com",
+              "client_id": "737716793798-hbgfjj3unt8oralqj5sscuqabt4g4uoa.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

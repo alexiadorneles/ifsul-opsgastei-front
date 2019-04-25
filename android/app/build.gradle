@@ -94,9 +94,8 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 25
-    // compileSdkVersion rootProject.ext.compileSdkVersion
-    // buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "com.opsgastei"
@@ -107,6 +106,9 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        manifestPlaceholders = [
+          appAuthRedirectScheme: 'io.identityserver.demo'
+        ]
     }
     splits {
         abi {
@@ -147,6 +149,10 @@ dependencies {
     compile "com.facebook.react:react-native:+"  // From node_modules
     compile "com.android.support:appcompat-v7:25.3.1"
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    compile 'com.google.firebase:firebase-appindexing:10.0.1'
+    compile 'com.google.android.gms:play-services-maps:10.0.1'
+    compile 'com.google.android.gms:play-services-places:10.0.1'
+    compile 'com.google.android.gms:play-services-location:10.0.1'
     // implementation "com.android.support:appcompat-v7:23.0.1"
 }
 

@@ -2,9 +2,9 @@
 
 buildscript {
     ext {
-        buildToolsVersion = "27.0.3"
+        buildToolsVersion = "26.0.3"
         minSdkVersion = 16
-        compileSdkVersion = 27
+        compileSdkVersion = 26
         targetSdkVersion = 26
         supportLibVersion = "27.1.1"
         googlePlayServicesAuthVersion = "15.0.1" // <--- use this version or newer
@@ -30,6 +30,17 @@ allprojects {
     repositories {
         mavenLocal()
         google() // <--- make sure this is included
+        configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+          def requested = details.requested
+              if (requested.group == 'com.google.android.gms') {
+                  details.useVersion '12.0.1'
+              }
+              if (requested.group == 'com.google.firebase') {
+                  details.useVersion '12.0.1'
+              }
+            }
+        }
         jcenter()
         maven {
           url "$rootDir/../node_modules/react-native-svg/android"
