@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 
 import { TextMaskService } from 'services'
-console.log('aaaa', TextMaskService.toMoney)
 import STYLES from './opsGasteiSaldoStyle'
 
 class OpsGasteiSaldo extends Component {

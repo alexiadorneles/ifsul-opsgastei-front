@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "898821703398",
+    "firebase_url": "https://ops-gastei-174823.firebaseio.com",
+    "project_id": "ops-gastei-174823",
+    "storage_bucket": "ops-gastei-174823.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898821703398:android:938c1a3321527ef9",
+        "android_client_info": {
+          "package_name": "ifsul.dev.opsgastei"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898821703398-f9i4c9631fd2ftq8m8d7h1i1ndc71drb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSs2qJt0toGZB2jJu4q3pqjxPhztr-m_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898821703398-f9i4c9631fd2ftq8m8d7h1i1ndc71drb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
