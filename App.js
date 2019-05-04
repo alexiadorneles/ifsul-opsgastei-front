@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { View, ScrollView } from 'react-native'
 import { Router, Scene } from 'react-native-router-flux'
 
-import { Objetivos, Categorias, AdicionarObjetivo, Estatistica, GastosFixos, Perfil, Login } from 'components/pages'
-import { LOGIN, OBJETIVOS, CATEGORIAS, ADICIONAR_OBJETIVO, ESTATISTICA, GASTOS_FIXOS, PERFIL } from 'constants/routerKeys'
+import { Objetivos, Categorias, AdicionarObjetivo, Estatistica, GastosFixos, Perfil, Login, Inicial } from 'components/pages'
+import { LOGIN, OBJETIVOS, CATEGORIAS, ADICIONAR_OBJETIVO, ESTATISTICA, GASTOS_FIXOS, PERFIL, INICIAL } from 'constants/routerKeys'
 
 export default class App extends Component {
   render() {
@@ -12,10 +12,15 @@ export default class App extends Component {
         <ScrollView contentContainerStyle={{ flex: 1 }}>
           <Router>
             <Scene key="root" style={{ flex: 1 }}>
+              <Scene key={INICIAL}
+                component={Inicial}
+                hideNavBar={true}
+                initial
+              />
               <Scene key={LOGIN}
                 component={Login}
                 hideNavBar={true}
-                initial
+                // initial
               />
               <Scene
                 key={OBJETIVOS}

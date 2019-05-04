@@ -8,18 +8,24 @@ export default {
     justifyContent: 'center',
   },
 
+  pageTitle: {
+    fontSize: 20,
+    alignSelf: 'center',
+    paddingBottom: 10,
+  },
+
   inicialContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 4,
   },
 
   button: {
-    flex: 1,
-    flexShrink: 1,
+    height: 80,
+    marginTop: 10,
   },
 
   label: {
+    fontSize: 18,
     padding: 10,
   },
 

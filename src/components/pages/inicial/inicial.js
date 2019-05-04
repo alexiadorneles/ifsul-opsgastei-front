@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, ScrollView, View } from 'react-native'
+import { Text, ScrollView, View, AsyncStorage } from 'react-native'
 import { TextInputMask } from 'react-native-masked-text'
 
 import { OpsGasteiButton } from 'components/generic'
@@ -46,8 +46,9 @@ class Inicial extends Component {
     // return sucesso ? _swalService.success('Bem vindo.') : _swalService.error('Houve algum erro com o login, por favor tente novamente!')
   }
 
-  pegarUsuarioGoogle() {
-    // return angular.copy(_$localStorage.usuarioGoogle)
+  async pegarUsuarioGoogle() {
+    const usuarioGoogle = await AsyncStorage.getItem('usuarioGoogle')
+    return JSON.parse(usuarioGoogle)
   }
 
   init() {
@@ -96,4 +97,4 @@ class Inicial extends Component {
   }
 }
 
-export default Inicial
+export { Inicial }

@@ -2,7 +2,6 @@ export default {
   pageContainer: {
     paddingHorizontal: 35,
     marginBottom: 20,
-    // flex: 1,
   },
 
   pageTitle: {
