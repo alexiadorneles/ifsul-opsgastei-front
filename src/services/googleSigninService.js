@@ -17,12 +17,13 @@ const errors = [
 
 class GoogleSigninService {
   async signIn() {
-    await GoogleSignin.hasPlayServices()
+    await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true })
     try {
       const { user } = await GoogleSignin.signIn()
       return user
     } catch (error) {
-      console.warn(errors.find(er => er.key === error.code).message)
+      const knownError = errors.find(er => er.key === error.code)
+      console.warn(knownError && knownError.message || error)
     }
   }
 
@@ -47,6 +48,10 @@ class GoogleSigninService {
 
   async configure() {
     await GoogleSignin.configure()
+    // await GoogleSignin.configure({
+    // webClientId: '737716793798-hbgfjj3unt8oralqj5sscuqabt4g4uoa.apps.googleusercontent.com',
+    // client ID of type WEB for your server (needed to verify user ID and offline access)
+    // })
   }
 
 }
