@@ -1,6 +1,6 @@
 export default {
-  imageSize: {
-    width: 100,
-    heigth: 100,
-  },
+	imageSize: {
+		width: 100,
+		heigth: 100,
+	},
 }

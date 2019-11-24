@@ -1,4 +1,4 @@
 export default {
-  COMPLETO: 'C',
-  INCOMPLETO: 'I',
+	COMPLETO: 'C',
+	INCOMPLETO: 'I',
 }

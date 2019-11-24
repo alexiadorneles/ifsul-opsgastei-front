@@ -5,16 +5,15 @@ import Logo from 'assets/img/logo.png'
 import { imageSize } from './opsGasteiLogoStyle'
 
 class OpsGasteiLogo extends Component {
-  state = { gastoFixo: {} }
+	state = { gastoFixo: {} }
 
-  render() {
-    return (
-      <View style={imageSize}>
-        <Image style={imageSize} source={Logo} />
-      </View>
-    )
-  }
-
+	render() {
+		return (
+			<View style={imageSize}>
+				<Image style={imageSize} source={Logo} />
+			</View>
+		)
+	}
 }
 
 export default OpsGasteiLogo

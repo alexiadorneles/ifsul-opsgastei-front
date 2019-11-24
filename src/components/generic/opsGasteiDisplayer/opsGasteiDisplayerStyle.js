@@ -1,43 +1,43 @@
 import COLORS from 'constants/colors'
 
 export default {
-  displayerContainer: {
-    marginBottom: 25,
-  },
+	displayerContainer: {
+		marginBottom: 25,
+	},
 
-  displayerTitle: {
-    paddingVertical: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
+	displayerTitle: {
+		paddingVertical: 10,
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'space-between',
+	},
 
-  texto: {
-    fontSize: 22,
-    fontWeight: '600',
-    margin: 0,
-  },
+	texto: {
+		fontSize: 22,
+		fontWeight: '600',
+		margin: 0,
+	},
 
-  info: {
-    paddingLeft: 40,
-  },
+	info: {
+		paddingLeft: 40,
+	},
 
-  type: {
-    fontSize: 20,
-    color: COLORS.darkGrey,
-  },
+	type: {
+		fontSize: 20,
+		color: COLORS.darkGrey,
+	},
 
-  categoriaComnponent: {
-    alignItems: 'center',
-    alignSelf: 'center',
-    flex: 1,
-    paddingRight: 15,
-  },
+	categoriaComnponent: {
+		alignItems: 'center',
+		alignSelf: 'center',
+		flex: 1,
+		paddingRight: 15,
+	},
 
-  categoria: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
+	categoria: {
+		flex: 1,
+		justifyContent: 'flex-start',
+		alignItems: 'center',
+		flexDirection: 'row',
+	},
 }

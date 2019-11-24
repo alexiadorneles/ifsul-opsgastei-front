@@ -9,45 +9,45 @@ import STYLES from './perfilStyle'
 import { CATEGORIAS } from 'constants/routerKeys'
 
 class Perfil extends Component {
-  static propTypes = {
-    usuario: PropTypes.object,
-    salarioAtual: PropTypes.object,
-  }
+	static propTypes = {
+		usuario: PropTypes.object,
+		salarioAtual: PropTypes.object,
+	}
 
-  goToCategorias() {
-    Actions[CATEGORIAS]()
-  }
+	goToCategorias() {
+		Actions[CATEGORIAS]()
+	}
 
-  render() {
-    const { usuario, salarioAtual } = this.props
-    const lastListItemStyle = { ...STYLES.listItem }
-    lastListItemStyle.borderBottomWidth = 0
+	render() {
+		const { usuario, salarioAtual } = this.props
+		const lastListItemStyle = { ...STYLES.listItem }
+		lastListItemStyle.borderBottomWidth = 0
 
-    return (
-      <SecuredContainer style={STYLES.container}>
-        <ImageBackground style={STYLES.headerProfile} source={Background}>
-          <Image style={STYLES.picture} source={usuario && usuario.picture} />
-          <Text style={STYLES.nome}> {usuario && usuario.nome} </Text>
-          <Text style={STYLES.cash}> {salarioAtual && salarioAtual.valor} </Text>
-        </ImageBackground>
+		return (
+			<SecuredContainer style={STYLES.container}>
+				<ImageBackground style={STYLES.headerProfile} source={Background}>
+					<Image style={STYLES.picture} source={usuario && usuario.picture} />
+					<Text style={STYLES.nome}> {usuario && usuario.nome} </Text>
+					<Text style={STYLES.cash}> {salarioAtual && salarioAtual.valor} </Text>
+				</ImageBackground>
 
-        <View style={STYLES.list}>
-          <TouchableOpacity onPress={this.editarReceita}>
-            <Text style={STYLES.listItem}> Editar Receitas </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this.goToCategorias}>
-            <Text style={STYLES.listItem}> Categorias </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this.goToTutorial}>
-            <Text style={STYLES.listItem}> Rever Tutorial </Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this.logout}>
-            <Text style={lastListItemStyle}> Sair </Text>
-          </TouchableOpacity>
-        </View>
-      </SecuredContainer>
-    )
-  }
+				<View style={STYLES.list}>
+					<TouchableOpacity onPress={this.editarReceita}>
+						<Text style={STYLES.listItem}> Editar Receitas </Text>
+					</TouchableOpacity>
+					<TouchableOpacity onPress={this.goToCategorias}>
+						<Text style={STYLES.listItem}> Categorias </Text>
+					</TouchableOpacity>
+					<TouchableOpacity onPress={this.goToTutorial}>
+						<Text style={STYLES.listItem}> Rever Tutorial </Text>
+					</TouchableOpacity>
+					<TouchableOpacity onPress={this.logout}>
+						<Text style={lastListItemStyle}> Sair </Text>
+					</TouchableOpacity>
+				</View>
+			</SecuredContainer>
+		)
+	}
 }
 
 export { Perfil }

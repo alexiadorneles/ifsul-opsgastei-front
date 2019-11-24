@@ -1,10 +1,10 @@
 export default {
-  deletarObjetivoCompleto: {
-    alignSelf: 'flex-end',
-  },
+	deletarObjetivoCompleto: {
+		alignSelf: 'flex-end',
+	},
 
-  container: {
-    marginTop: 10,
-    paddingRight: 10,
-  },
+	container: {
+		marginTop: 10,
+		paddingRight: 10,
+	},
 }

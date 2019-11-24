@@ -1,30 +1,30 @@
 import COLORS from 'constants/colors'
 
 const containerDefault = {
-  paddingVertical: 5,
+	paddingVertical: 5,
 }
 
 export default {
-  container: {
-    ...containerDefault,
-  },
+	container: {
+		...containerDefault,
+	},
 
-  containerAtivo: {
-    ...containerDefault,
-    borderBottomWidth: 2,
-    borderBottomColor: COLORS.primary,
-  },
+	containerAtivo: {
+		...containerDefault,
+		borderBottomWidth: 2,
+		borderBottomColor: COLORS.primary,
+	},
 
-  texto: {
-    fontFamily: 'Roboto',
-    margin: 0,
-    fontSize: 12,
-  },
+	texto: {
+		fontFamily: 'Roboto',
+		margin: 0,
+		fontSize: 12,
+	},
 
-  iconContainer: {
-    height: 60,
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
+	iconContainer: {
+		height: 60,
+		flex: 1,
+		alignItems: 'center',
+		justifyContent: 'space-around',
+	},
 }

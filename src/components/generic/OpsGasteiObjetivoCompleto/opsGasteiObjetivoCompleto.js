@@ -7,40 +7,40 @@ import COLORS from 'constants/colors'
 import STYLES from './opsGasteiObjetivoCompletoStyle'
 
 class OpsGasteiObjetivoCompleto extends Component {
-  static propTypes = {
-    objetivo: PropTypes.object,
-    callbackAcao: PropTypes.any,
-  }
+	static propTypes = {
+		objetivo: PropTypes.object,
+		callbackAcao: PropTypes.any,
+	}
 
-  constructor() {
-    super()
+	constructor() {
+		super()
 
-    //bindings
-    this.prepararExclusao = this.prepararExclusao.bind(this)
-    this.excluir = this.excluir.bind(this)
-  }
+		//bindings
+		this.prepararExclusao = this.prepararExclusao.bind(this)
+		this.excluir = this.excluir.bind(this)
+	}
 
-  prepararExclusao() {
-    // _swalService.confirm('Desejas excluir o objetivo?', this.excluir, this.objetivo)
-  }
+	prepararExclusao() {
+		// _swalService.confirm('Desejas excluir o objetivo?', this.excluir, this.objetivo)
+	}
 
-  excluir() {
-    // _objetivoService.deletar(objetivo.id).then(() => {
-    //   this.props.callbackAcao()
-    // })
-  }
+	excluir() {
+		// _objetivoService.deletar(objetivo.id).then(() => {
+		//   this.props.callbackAcao()
+		// })
+	}
 
-  render() {
-    return (
-      <View style={STYLES.container}>
-        <OpsGasteiObjetivo objetivo={this.props.objetivo}>
-          <TouchableOpacity style={STYLES.deletarObjetivoCompleto} onPress={this.prepararExclusao}>
-            <OpsGasteiIcone icone='times' cor={COLORS.negative} fontSize={25} />
-          </TouchableOpacity>
-        </OpsGasteiObjetivo>
-      </View>
-    )
-  }
+	render() {
+		return (
+			<View style={STYLES.container}>
+				<OpsGasteiObjetivo objetivo={this.props.objetivo}>
+					<TouchableOpacity style={STYLES.deletarObjetivoCompleto} onPress={this.prepararExclusao}>
+						<OpsGasteiIcone icone="times" cor={COLORS.negative} fontSize={25} />
+					</TouchableOpacity>
+				</OpsGasteiObjetivo>
+			</View>
+		)
+	}
 }
 
 export default OpsGasteiObjetivoCompleto

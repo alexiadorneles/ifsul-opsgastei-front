@@ -1,31 +1,30 @@
 import DEFAULT_STYLES from 'constants/defaultStyles'
 
 export default {
-  ...DEFAULT_STYLES,
+	...DEFAULT_STYLES,
 
-  container: {
-    flex: 1,
-    marginTop: 15,
-  },
+	container: {
+		flex: 1,
+		marginTop: 15,
+	},
 
-  adicionarCategoria: {
-    flex: 1,
-    marginTop: 5,
-    alignSelf: 'center',
-  },
+	adicionarCategoria: {
+		flex: 1,
+		marginTop: 5,
+		alignSelf: 'center',
+	},
 
-  buttonContainer: {
-    flexShrink: 1,
-  },
+	buttonContainer: {
+		flexShrink: 1,
+	},
 
-  title: {
-    alignSelf: 'center',
-  },
+	title: {
+		alignSelf: 'center',
+	},
 
-  colorPicker: {
-    flex: 1,
-    width: 200,
-    height: 100,
-  },
+	colorPicker: {
+		flex: 1,
+		width: 200,
+		height: 100,
+	},
 }
-

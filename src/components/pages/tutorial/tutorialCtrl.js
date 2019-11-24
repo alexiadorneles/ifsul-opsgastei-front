@@ -1,11 +1,11 @@
 let _$location
 
 export default class PerfilCtrl {
-  constructor($location) {
-    _$location = $location
-  }
+	constructor($location) {
+		_$location = $location
+	}
 
-  goHome() {
-    _$location.path('/objetivo')
-  }
+	goHome() {
+		_$location.path('/objetivo')
+	}
 }

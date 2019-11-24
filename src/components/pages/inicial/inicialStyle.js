@@ -1,36 +1,35 @@
 import DEFAULT_STYLES from 'constants/defaultStyles'
 
 export default {
-  ...DEFAULT_STYLES,
+	...DEFAULT_STYLES,
 
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-  },
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+	},
 
-  pageTitle: {
-    fontSize: 20,
-    alignSelf: 'center',
-    paddingBottom: 10,
-  },
+	pageTitle: {
+		fontSize: 20,
+		alignSelf: 'center',
+		paddingBottom: 10,
+	},
 
-  inicialContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+	inicialContainer: {
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
 
-  button: {
-    height: 80,
-    marginTop: 10,
-  },
+	button: {
+		height: 80,
+		marginTop: 10,
+	},
 
-  label: {
-    fontSize: 18,
-    padding: 10,
-  },
+	label: {
+		fontSize: 18,
+		padding: 10,
+	},
 
-  input: {
-    alignSelf: 'stretch',
-  },
+	input: {
+		alignSelf: 'stretch',
+	},
 }
-

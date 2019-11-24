@@ -1,11 +1,11 @@
 export default {
-  container: {
-    flex: 1,
-    alignItems: 'stretch',
-    justifyContent: 'center',
-  },
+	container: {
+		flex: 1,
+		alignItems: 'stretch',
+		justifyContent: 'center',
+	},
 
-  description: {
-    alignSelf: 'flex-start',
-  },
+	description: {
+		alignSelf: 'flex-start',
+	},
 }

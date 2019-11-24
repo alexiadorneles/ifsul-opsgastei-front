@@ -5,6 +5,4 @@ import './templates/actions.scss'
 
 import './simulacao.scss'
 
-export default angular.module('pages.simulacao', [])
-  .component('simulacao', component)
-  .name
+export default angular.module('pages.simulacao', []).component('simulacao', component).name

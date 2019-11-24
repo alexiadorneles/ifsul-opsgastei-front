@@ -10,47 +10,47 @@ import { OBJETIVOS, INICIAL } from 'constants/routerKeys'
 import { googleSiginService } from 'services'
 
 class Login extends Component {
-  constructor() {
-    super()
+	constructor() {
+		super()
 
-    //bindings
-    this.redirect = this.redirect.bind(this)
+		//bindings
+		this.redirect = this.redirect.bind(this)
 
-    // init
-    this.state = { isSigninInProgress: false }
-    this.redirect()
-  }
+		// init
+		this.state = { isSigninInProgress: false }
+		this.redirect()
+	}
 
-  async componentDidMount() {
-    await googleSiginService.configure()
-  }
+	async componentDidMount() {
+		await googleSiginService.configure()
+	}
 
-  signIn = async () => {
-    this.setState({ isSigninInProgress: true })
-    const user = await googleSiginService.signIn()
-    await AsyncStorage.setItem('usuarioGoogle', JSON.stringify(user))
-    this.redirect()
-  }
+	signIn = async () => {
+		this.setState({ isSigninInProgress: true })
+		const user = await googleSiginService.signIn()
+		await AsyncStorage.setItem('usuarioGoogle', JSON.stringify(user))
+		this.redirect()
+	}
 
-  async redirect() {
-    const usuarioGoogle = await AsyncStorage.getItem('usuarioGoogle')
-    const usuarioLogado = await AsyncStorage.getItem('usuarioLogado')
-    if (!!usuarioGoogle) Actions[INICIAL]()
-    if (!!usuarioLogado) Actions[OBJETIVOS]()
-  }
+	async redirect() {
+		const usuarioGoogle = await AsyncStorage.getItem('usuarioGoogle')
+		const usuarioLogado = await AsyncStorage.getItem('usuarioLogado')
+		if (!!usuarioGoogle) Actions[INICIAL]()
+		if (!!usuarioLogado) Actions[OBJETIVOS]()
+	}
 
-  render() {
-    return (
-      <ImageBackground style={STYLES.loginContainer} source={Background}>
-        <View style={STYLES.login}>
-          <OpsGasteiLogo />
-          <TouchableOpacity style={STYLES.botaoLogin} onPress={this.signIn} disabled={this.state.isSigninInProgress}>
-            <Image style={STYLES.googleIcon} source={GoogleIcon} />
-          </TouchableOpacity>
-        </View>
-      </ImageBackground >
-    )
-  }
+	render() {
+		return (
+			<ImageBackground style={STYLES.loginContainer} source={Background}>
+				<View style={STYLES.login}>
+					<OpsGasteiLogo />
+					<TouchableOpacity style={STYLES.botaoLogin} onPress={this.signIn} disabled={this.state.isSigninInProgress}>
+						<Image style={STYLES.googleIcon} source={GoogleIcon} />
+					</TouchableOpacity>
+				</View>
+			</ImageBackground>
+		)
+	}
 }
 
 export { Login }

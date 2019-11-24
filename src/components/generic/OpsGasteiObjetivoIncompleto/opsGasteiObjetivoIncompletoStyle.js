@@ -1,6 +1,6 @@
 export default {
-  dropdown: {
-    height: 50,
-    width: 50,
-  },
+	dropdown: {
+		height: 50,
+		width: 50,
+	},
 }

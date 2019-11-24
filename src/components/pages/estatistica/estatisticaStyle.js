@@ -1,9 +1,9 @@
 import DEFAULT_STYLES from 'constants/defaultStyles'
 
 export default {
-  ...DEFAULT_STYLES,
+	...DEFAULT_STYLES,
 
-  graficoContainer: {
-    marginVertical: 30,
-  },
+	graficoContainer: {
+		marginVertical: 30,
+	},
 }

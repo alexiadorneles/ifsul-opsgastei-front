@@ -4,20 +4,16 @@ import PropTypes from 'prop-types'
 import { OpsGasteiDisplayer } from 'components/generic'
 
 class OpsGasteiObjetivo extends Component {
-  static propTypes = {
-    objetivo: PropTypes.object,
-    children: PropTypes.any,
-  }
+	static propTypes = {
+		objetivo: PropTypes.object,
+		children: PropTypes.any,
+	}
 
-  render() {
-    const { objetivo, children } = this.props
+	render() {
+		const { objetivo, children } = this.props
 
-    return (
-      <OpsGasteiDisplayer object={objetivo}>
-        {children}
-      </OpsGasteiDisplayer>
-    )
-  }
+		return <OpsGasteiDisplayer object={objetivo}>{children}</OpsGasteiDisplayer>
+	}
 }
 
 export default OpsGasteiObjetivo
