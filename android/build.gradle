@@ -2,24 +2,17 @@
 
 buildscript {
     ext {
-        buildToolsVersion = "26.0.3"
+        buildToolsVersion = "28.0.3"
         minSdkVersion = 16
-        compileSdkVersion = 26
-        targetSdkVersion = 26
-        supportLibVersion = "27.1.1"
-        googlePlayServicesAuthVersion = "15.0.1" // <--- use this version or newer
+        compileSdkVersion = 28
+        targetSdkVersion = 28
     }
     repositories {
         google()
         jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.2' // <--- use this version or newer
-        classpath 'com.google.gms:google-services:3.2.1' // <--- use this version or newer
+        classpath("com.android.tools.build:gradle:3.4.2")
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -29,38 +22,17 @@ buildscript {
 allprojects {
     repositories {
         mavenLocal()
-        google() // <--- make sure this is included
-        configurations.all {
-        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-          def requested = details.requested
-              if (requested.group == 'com.google.android.gms') {
-                  details.useVersion '12.0.1'
-              }
-              if (requested.group == 'com.google.firebase') {
-                  details.useVersion '12.0.1'
-              }
-            }
-        }
-        jcenter()
-        maven {
-          url "$rootDir/../node_modules/react-native-svg/android"
-       }
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
-            url "$rootDir/../node_modules/react-native/android"
+            url("$rootDir/../node_modules/react-native/android")
         }
-        maven { url "https://jitpack.io" }
         maven {
-            url 'https://maven.google.com/'
-            name 'Google'
+            // Android JSC is installed from npm
+            url("$rootDir/../node_modules/jsc-android/dist")
         }
-    }
-}
 
-ext {
-    buildToolsVersion = "26.0.3"
-    minSdkVersion = 16
-    compileSdkVersion = 26
-    targetSdkVersion = 26
-    supportLibVersion = "26.1.0"
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
 }
