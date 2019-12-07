@@ -4,14 +4,20 @@
 		"browser": true
 	},
 	"plugins": ["react"],
-	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"extends": ["eslint:recommended", "plugin:react/recommended", "defaults"],
+	"parserOptions": {
+		"ecmaVersion": 7,
+		"sourceType": "module"
+	},
 	"rules": {
+		"react/prop-types": 0,
 		"indent": ["error", "tab"],
 		"quotes": ["error", "single"],
 		"semi": ["error", "never"],
 		"comma-dangle": ["error", "always-multiline"],
 		"no-cond-assign": ["error", "always"],
 		"no-extra-boolean-cast": 0,
+		"no-console": "warn",
 		"prefer-const": [
 			"error",
 			{

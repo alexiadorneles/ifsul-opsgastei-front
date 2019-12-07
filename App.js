@@ -30,7 +30,7 @@ export default class App extends Component {
 				<ScrollView contentContainerStyle={{ flex: 1 }}>
 					<Router>
 						<Scene key="root" style={{ flex: 1 }}>
-							{/* <Scene key={INICIAL} component={Inicial} hideNavBar={true} initial /> */}
+							<Scene key={INICIAL} component={Inicial} hideNavBar={true} /*initial*/ />
 							<Scene
 								key={LOGIN}
 								component={Login}
