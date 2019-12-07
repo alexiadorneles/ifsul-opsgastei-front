@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View, TextInput, Picker } from 'react-native'
-import MaskedInput from 'react-native-masked-input'
+// import MaskedInput from 'react-native-masked-input'
 import { Actions } from 'react-native-router-flux'
 
 import { OpsGasteiButton, SecuredContainer } from 'components/generic'
@@ -64,14 +64,14 @@ class AdicionarObjetivo extends Component {
 						value={this.state.objetivo.nome}
 						onChangeText={text => this.atualizarPropriedadeObjetivoEState('nome', text)}
 					/>
-					<MaskedInput
+					{/* <MaskedInput
 						style={STYLES.input}
 						placeholder="Valor"
 						maskType="money"
 						currencySymbol="R$"
 						currencySeparator=","
 						onChangeText={valor => this.atualizarPropriedadeObjetivoEState('valor', valor)}
-					/>
+					/> */}
 					<Picker
 						selectedValue={this.state.objetivo.categoria}
 						style={STYLES.input}
