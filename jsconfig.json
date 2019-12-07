@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "baseUrl": "./",
+    "paths": {
+      "assets": ["src/assets"],
+      "constants": ["src/constants"],
+      "img": ["src/assets/img"],
+      "utils": ["src/utils"],
+      "objects": ["src/objects"],
+      "services": ["src/services"],
+      "generic": ["src/components/generic"],
+      "pages": ["src/components/pages"]
+    },
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "alwaysStrict": true,
+    "sourceMap": false,
+    "jsx": "preserve"
+  },
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*",
+    "dist"
+  ],
+  "paths": {
+    "assets": "./src/assets",
+    "constants": "./src/constants",
+    "img": "./src/assets/img",
+    "utils": "./src/utils",
+    "objects": "./src/objects",
+    "services": "./src/services",
+    "generic": "./src/components/generic",
+    "pages": "./src/components/pages"
+  }
+}
