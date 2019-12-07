@@ -22,14 +22,19 @@ export default {
 	saldoPositivo: {
 		...saldo,
 		backgroundColor: COLORS.positive,
+		justifyContent: 'center',
 	},
 
 	valorSaldo: {
 		...texto,
+		width: '100%',
+		textAlign: 'center',
 		fontSize: 60,
 	},
 
 	valorSalario: {
 		...texto,
+		width: '100%',
+		textAlign: 'center',
 	},
 }
