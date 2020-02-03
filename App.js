@@ -35,9 +35,9 @@ export default class App extends Component {
 								key={LOGIN}
 								component={Login}
 								hideNavBar={true}
-								// initial
+								initial
 							/>
-							<Scene key={OBJETIVOS} component={Objetivos} hideNavBar={true} initial />
+							<Scene key={OBJETIVOS} component={Objetivos} hideNavBar={true} />
 							<Scene key={CATEGORIAS} component={Categorias} hideNavBar={true} />
 							<Scene key={ADICIONAR_OBJETIVO} component={AdicionarObjetivo} hideNavBar={true} />
 							<Scene key={ESTATISTICA} component={Estatistica} hideNavBar={true} />
