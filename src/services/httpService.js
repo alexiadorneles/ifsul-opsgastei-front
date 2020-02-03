@@ -50,4 +50,6 @@ class HttpService {
 	}
 }
 
-export { HttpService }
+
+const httpService = new HttpService()
+export { httpService }

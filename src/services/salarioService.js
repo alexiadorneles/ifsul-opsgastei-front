@@ -37,6 +37,10 @@ class SalarioService {
 	buscarAtual() {
 		return httpService.get(`${url}/usuario/atual`)
 	}
+
+	contarTodos() {
+		return httpService.get(`${url}/count/1`)
+	}
 }
 
 const salarioService = new SalarioService()
