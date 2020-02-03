@@ -1,5 +1,5 @@
 import { httpService } from 'services'
-import { AsyncStorage } from 'react-native'
+import AsyncStorage from '@react-native-community/async-storage'
 import { Actions } from 'react-native-router-flux'
 import { LOGIN } from 'constants/routerKeys'
 import URL_BASE from 'constants/baseUrl'

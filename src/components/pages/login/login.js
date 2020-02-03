@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Image, View, ImageBackground, TouchableOpacity } from 'react-native'
 import { Actions } from 'react-native-router-flux'
-import { AsyncStorage } from 'react-native'
+import AsyncStorage from '@react-native-community/async-storage'
 import { OpsGasteiLogo } from 'components/generic'
 import Background from 'assets/img/back.png'
 import GoogleIcon from 'assets/img/google-icon.png'

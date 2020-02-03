@@ -42,6 +42,7 @@
 		977A1F5AEAFE447C8460E5CB /* libRCTBEEPickerManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2EA2C97883D4089A6B1A0F5 /* libRCTBEEPickerManager.a */; };
 		CE9E1220D0514EECB640BDF9 /* libRNAppAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB8E7CE1F0644CEAD25766F /* libRNAppAuth.a */; };
 		6B5ACA3467B24889A135894D /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B754951C4254B53B6950DDE /* libRNGoogleSignin.a */; };
+		7267D32E439F44CDB5AEC481 /* libRNCAsyncStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67235E478B3E43D6AA9F1FFC /* libRNCAsyncStorage.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -356,6 +357,8 @@
 		0CB8E7CE1F0644CEAD25766F /* libRNAppAuth.a */ = {isa = PBXFileReference; name = "libRNAppAuth.a"; path = "libRNAppAuth.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		48E167F72EBA457DACCBD18D /* RNGoogleSignin.xcodeproj */ = {isa = PBXFileReference; name = "RNGoogleSignin.xcodeproj"; path = "../node_modules/react-native-google-signin/ios/RNGoogleSignin.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		5B754951C4254B53B6950DDE /* libRNGoogleSignin.a */ = {isa = PBXFileReference; name = "libRNGoogleSignin.a"; path = "libRNGoogleSignin.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		BAC2B5AC754C4A9CBFC321BE /* RNCAsyncStorage.xcodeproj */ = {isa = PBXFileReference; name = "RNCAsyncStorage.xcodeproj"; path = "../node_modules/@react-native-community/async-storage/ios/RNCAsyncStorage.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		67235E478B3E43D6AA9F1FFC /* libRNCAsyncStorage.a */ = {isa = PBXFileReference; name = "libRNCAsyncStorage.a"; path = "libRNCAsyncStorage.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,6 +391,7 @@
 				977A1F5AEAFE447C8460E5CB /* libRCTBEEPickerManager.a in Frameworks */,
 				CE9E1220D0514EECB640BDF9 /* libRNAppAuth.a in Frameworks */,
 				6B5ACA3467B24889A135894D /* libRNGoogleSignin.a in Frameworks */,
+				7267D32E439F44CDB5AEC481 /* libRNCAsyncStorage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +583,7 @@
 				D51ABC99A6DA47A19CBFFF21 /* RCTBEEPickerManager.xcodeproj */,
 				8736BBC57E6B4606B35CCB16 /* RNAppAuth.xcodeproj */,
 				48E167F72EBA457DACCBD18D /* RNGoogleSignin.xcodeproj */,
+				BAC2B5AC754C4A9CBFC321BE /* RNCAsyncStorage.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1210,6 +1215,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1217,6 +1223,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-picker\ios\RCTBEEPickerManager",
 					"$(SRCROOT)\..\node_modules\react-native-app-auth\ios",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 			};
 			name = Debug;
@@ -1242,6 +1249,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1249,6 +1257,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-picker\ios\RCTBEEPickerManager",
 					"$(SRCROOT)\..\node_modules\react-native-app-auth\ios",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 			};
 			name = Release;
@@ -1274,6 +1283,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-picker\ios\RCTBEEPickerManager",
 					"$(SRCROOT)\..\node_modules\react-native-app-auth\ios",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 			};
 			name = Debug;
@@ -1298,6 +1308,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-picker\ios\RCTBEEPickerManager",
 					"$(SRCROOT)\..\node_modules\react-native-app-auth\ios",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 			};
 			name = Release;
@@ -1332,6 +1343,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1339,6 +1351,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-picker\ios\RCTBEEPickerManager",
 					"$(SRCROOT)\..\node_modules\react-native-app-auth\ios",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 			};
 			name = Debug;
@@ -1373,6 +1386,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1380,6 +1394,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-picker\ios\RCTBEEPickerManager",
 					"$(SRCROOT)\..\node_modules\react-native-app-auth\ios",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 			};
 			name = Release;
@@ -1413,6 +1428,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1420,6 +1436,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-picker\ios\RCTBEEPickerManager",
 					"$(SRCROOT)\..\node_modules\react-native-app-auth\ios",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 			};
 			name = Debug;
@@ -1453,6 +1470,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1460,6 +1478,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-picker\ios\RCTBEEPickerManager",
 					"$(SRCROOT)\..\node_modules\react-native-app-auth\ios",
 					"$(SRCROOT)\..\node_modules\react-native-google-signin\ios\RNGoogleSignin",
+					"$(SRCROOT)/../node_modules/@react-native-community/async-storage/ios",
 				);
 			};
 			name = Release;

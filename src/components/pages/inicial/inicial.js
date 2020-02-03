@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Text, ScrollView, View, AsyncStorage } from 'react-native'
+import { Text, ScrollView, View } from 'react-native'
+import AsyncStorage from '@react-native-community/async-storage'
 import { TextInputMask } from 'react-native-masked-text'
 
 import { OpsGasteiButton } from 'components/generic'
