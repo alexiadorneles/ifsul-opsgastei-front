@@ -15,6 +15,7 @@ import {
 import STATUS from 'constants/objetivoStatus'
 import STYLES from './objetivosStyle'
 import { ADICIONAR_OBJETIVO } from 'constants/routerKeys'
+import { salarioService, gastoFixoService, objetivoService, categoriaService } from 'services'
 
 class Objetivos extends Component {
 	state = { objetivosCompletos: [], objetivosIncompletos: [], gastosFixos: [] }
@@ -39,127 +40,129 @@ class Objetivos extends Component {
 	}
 
 	buscarGastosFixos() {
-		const response = {
-			data: [
-				{
-					nome: 'Almoço',
-					valor: 200,
-					categoria: {
-						nome: 'Comida',
-						cor: 'red',
-					},
-				},
-				{
-					nome: 'Spotify',
-					valor: 25,
-					categoria: {
-						nome: 'Música',
-						cor: 'blue',
-					},
-				},
-				{
-					nome: 'Netflix',
-					valor: 50,
-					categoria: {
-						nome: 'Entretenimento',
-						cor: 'green',
-					},
-				},
-			],
-		}
-		// _gastoFixoService.buscarPorUsuario().then(response => {
-		const gastosFixos = response.data
-		this.setState({ gastosFixos })
-		// })
+		// const response = {
+		// 	data: [
+		// 		{
+		// 			nome: 'Almoço',
+		// 			valor: 200,
+		// 			categoria: {
+		// 				nome: 'Comida',
+		// 				cor: 'red',
+		// 			},
+		// 		},
+		// 		{
+		// 			nome: 'Spotify',
+		// 			valor: 25,
+		// 			categoria: {
+		// 				nome: 'Música',
+		// 				cor: 'blue',
+		// 			},
+		// 		},
+		// 		{
+		// 			nome: 'Netflix',
+		// 			valor: 50,
+		// 			categoria: {
+		// 				nome: 'Entretenimento',
+		// 				cor: 'green',
+		// 			},
+		// 		},
+		// 	],
+		// }
+
+		gastoFixoService.buscarPorUsuario().then(response => {
+			const gastosFixos = response.data
+			this.setState({ gastosFixos })
+		})
 	}
 
-	setarSalario() {
-		// _salarioService.buscarAtual().then(response => {
-		// _$localStorage.salarioAtual = response.data
-		// })
+	async setarSalario() {
+		salarioService.buscarAtual().then(response => {
+			_$localStorage.salarioAtual = response.data
+		})
 	}
 
 	buscarObjetivos() {
-		const response = {
-			data: [
-				{
-					nome: 'Xis',
-					valor: 15,
-					status: STATUS.COMPLETO,
-					categoria: {
-						nome: 'Comida',
-						cor: 'red',
-					},
-				},
-				{
-					nome: 'Violão',
-					valor: 250,
-					status: STATUS.COMPLETO,
-					categoria: {
-						nome: 'Música',
-						cor: 'blue',
-					},
-				},
-				{
-					nome: 'Game of Thrones',
-					valor: 120,
-					status: STATUS.COMPLETO,
-					categoria: {
-						nome: 'Entretenimento',
-						cor: 'green',
-					},
-				},
-				{
-					nome: 'Lasanha',
-					valor: 15,
-					status: STATUS.INCOMPLETO,
-					categoria: {
-						nome: 'Comida',
-						cor: 'red',
-					},
-				},
-				{
-					nome: 'Piano',
-					valor: 250,
-					status: STATUS.INCOMPLETO,
-					categoria: {
-						nome: 'Música',
-						cor: 'blue',
-					},
-				},
-				{
-					nome: 'Supernatural',
-					valor: 120,
-					status: STATUS.INCOMPLETO,
-					categoria: {
-						nome: 'Entretenimento',
-						cor: 'green',
-					},
-				},
-			],
-		}
-		// _objetivoService.buscarPorUsuario().then(response => {
-		const objetivos = response.data
-		const objetivosCompletos = objetivos.filter(objetivo => objetivo.status === STATUS.COMPLETO)
-		const objetivosIncompletos = objetivos.filter(objetivo => objetivo.status === STATUS.INCOMPLETO)
-		this.setState({ objetivosIncompletos, objetivosCompletos })
-		// })
+		// const response = {
+		// 	data: [
+		// 		{
+		// 			nome: 'Xis',
+		// 			valor: 15,
+		// 			status: STATUS.COMPLETO,
+		// 			categoria: {
+		// 				nome: 'Comida',
+		// 				cor: 'red',
+		// 			},
+		// 		},
+		// 		{
+		// 			nome: 'Violão',
+		// 			valor: 250,
+		// 			status: STATUS.COMPLETO,
+		// 			categoria: {
+		// 				nome: 'Música',
+		// 				cor: 'blue',
+		// 			},
+		// 		},
+		// 		{
+		// 			nome: 'Game of Thrones',
+		// 			valor: 120,
+		// 			status: STATUS.COMPLETO,
+		// 			categoria: {
+		// 				nome: 'Entretenimento',
+		// 				cor: 'green',
+		// 			},
+		// 		},
+		// 		{
+		// 			nome: 'Lasanha',
+		// 			valor: 15,
+		// 			status: STATUS.INCOMPLETO,
+		// 			categoria: {
+		// 				nome: 'Comida',
+		// 				cor: 'red',
+		// 			},
+		// 		},
+		// 		{
+		// 			nome: 'Piano',
+		// 			valor: 250,
+		// 			status: STATUS.INCOMPLETO,
+		// 			categoria: {
+		// 				nome: 'Música',
+		// 				cor: 'blue',
+		// 			},
+		// 		},
+		// 		{
+		// 			nome: 'Supernatural',
+		// 			valor: 120,
+		// 			status: STATUS.INCOMPLETO,
+		// 			categoria: {
+		// 				nome: 'Entretenimento',
+		// 				cor: 'green',
+		// 			},
+		// 		},
+		// 	],
+		// }
+		objetivoService.buscarPorUsuario().then(response => {
+			const objetivos = response.data
+			const objetivosCompletos = objetivos.filter(objetivo => objetivo.status === STATUS.COMPLETO)
+			const objetivosIncompletos = objetivos.filter(objetivo => objetivo.status === STATUS.INCOMPLETO)
+			this.setState({ objetivosIncompletos, objetivosCompletos })
+		})
 	}
 
 	buscarCategorias() {
-		// _categoriaService.buscarPorUsuario().then(response => {
-		// this.categorias = response.data
-		const categorias = [
-			{ nome: 'Comida', cor: 'blue' },
-			{ nome: 'Vestuário', cor: 'red' },
-			{ nome: 'Alimentação', cor: 'green' },
-			{ nome: 'Transporte', cor: 'black' },
-		]
-		this.setState({ categorias })
-		// })
+		categoriaService.buscarPorUsuario().then(response => {
+			this.categorias = response.data
+			// const categorias = [
+			// 	{ nome: 'Comida', cor: 'blue' },
+			// 	{ nome: 'Vestuário', cor: 'red' },
+			// 	{ nome: 'Alimentação', cor: 'green' },
+			// 	{ nome: 'Transporte', cor: 'black' },
+			// ]
+			this.setState({ categorias: this.categorias })
+		})
 	}
 
 	goToSimulacao() {
+		// Actions[]
 		// _$location.path('/objetivo/simulacao')
 	}
 

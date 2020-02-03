@@ -6,6 +6,10 @@ class UsuarioService {
 		return httpService.post(url, usuario)
 	}
 
+	findAll() {
+		return httpService.get(url)
+	}
+
 	pegarSaldo() {
 		return httpService.get(`${url}/saldo-atual`)
 	}

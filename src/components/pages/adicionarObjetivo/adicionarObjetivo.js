@@ -21,6 +21,10 @@ class AdicionarObjetivo extends Component {
 		this.atualizarPropriedadeObjetivoEState = this.atualizarPropriedadeObjetivoEState.bind(this)
 	}
 
+	async componentDidMount() {
+		await this.buscarCategorias()
+	}
+
 	objetivoAdicionado() {
 		// _swalService.success(`'${nomeObjetivo}' adicionado com sucesso.`)
 	}
@@ -43,14 +47,14 @@ class AdicionarObjetivo extends Component {
 		this.setState({ objetivo })
 	}
 
-	renderPickerItems() {
-		const { categoria } = this.state.objetivo
-		const categorias = this.buscarCategorias()
-		if (categoria) {
-			categorias.splice(categorias.indexOf(categoria), 1)
-			categorias.unshift(categoria)
-		}
-		return categorias.map(cat => <Picker.Item key={cat.nome} label={cat.nome} value={cat} />)
+	async renderPickerItems() {
+		const { categoria } = this.state.objetivo || []
+		const categorias = await this.buscarCategorias()
+		// if (categoria) {
+		// 	categorias.splice(categorias.indexOf(categoria), 1)
+		// 	categorias.unshift(categoria)
+		// }
+		// return categorias.map(cat => <Picker.Item key={cat.nome} label={cat.nome} value={cat} />)
 	}
 
 	render() {
@@ -79,7 +83,7 @@ class AdicionarObjetivo extends Component {
 						prompt="Escolha a Categoria"
 						onValueChange={categoria => this.atualizarPropriedadeObjetivoEState('categoria', categoria)}
 					>
-						{this.renderPickerItems()}
+						{/* {this.renderPickerItems()} */}
 					</Picker>
 
 					<OpsGasteiButton label="Adicionar Objetivo" model={this.state.objetivo} onClick={this.adicionar} />
