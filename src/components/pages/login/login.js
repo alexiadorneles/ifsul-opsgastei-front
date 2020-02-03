@@ -28,8 +28,11 @@ class Login extends Component {
 	signIn = async () => {
 		this.setState({ isSigninInProgress: true })
 		const user = await googleSiginService.signIn()
-		await AsyncStorage.setItem('usuarioGoogle', JSON.stringify(user))
-		this.redirect()
+		if (user) {
+			await AsyncStorage.setItem('usuarioGoogle', JSON.stringify(user))
+			this.redirect()
+		}
+		alert('Um erro ocorreu com o login, tente novamente')
 	}
 
 	async redirect() {
